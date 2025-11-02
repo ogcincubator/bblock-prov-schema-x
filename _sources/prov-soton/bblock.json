@@ -1,7 +1,7 @@
 {
-  "name": "Cross2013",
+  "name": "2024 w3c",
   "highlighted": true ,
-  "abstract": "A BBlock to cross check examples across the University of Southampton 2013 W3C community submission",
+  "abstract": "A BBlock to cross check examples across the University of The PROV-JSONLD Serialization w3c member submission",
   "status": "under-development",
   "dateTimeAddition": "2023-07-10T00:00:00Z",
   "itemClass": "schema",
@@ -12,8 +12,8 @@
       ],
   "sources": [
     {
-      "link": "https://www.w3.org/TR/prov-o/",
-      "title": "The PROV-O vocabulary"
+      "link": "https://www.w3.org/submissions/2024/SUBM-prov-jsonld-20240825/#Example",
+      "title": "The PROV-JSONLD Serialization"
     }
   ],
   "maturity": "development",

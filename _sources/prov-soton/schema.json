@@ -6,7 +6,7 @@
       "$ref": "bblocks://ogc.ogc-utils.prov"
     },
     {
-      "$ref": "https://www.w3.org/submissions/prov-json/schema"
+      "$ref": "https://www.w3.org/submissions/2024/SUBM-prov-jsonld-20240825/schema.json"
     }
   ]
 }
