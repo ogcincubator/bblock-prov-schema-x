@@ -1,4 +1,8 @@
-# OGC Building Block template
+# OGC Building Blocks for Provenance
+
+** FORK to perform compatibility testing and reconciliation with 2013  [W3C community submission](https://www.w3.org/submissions/prov-json/) **
+
+Note this work follows the same principles but is not complete against PROV model - however testing compatibility against sub-components will allow design review of options.
 
 This repository defines a "building block" for use of [PROV-O Vocabulary](https://www.w3.org/TR/prov-o/) using a schema valid for either JSON or JSON-LD implementation. (See ["Other Prov JSON serialisations"](#other-prov-json-serialisations) )
 
