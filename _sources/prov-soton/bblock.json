@@ -1,0 +1,22 @@
+{
+  "name": "Cross2013",
+  "highlighted": true ,
+  "abstract": "A BBlock to cross check examples across the University of Southampton 2013 W3C community submission",
+  "status": "under-development",
+  "dateTimeAddition": "2023-07-10T00:00:00Z",
+  "itemClass": "schema",
+  "register": "ogc-utils",
+  "version": "0.1",
+  "dateOfLastChange": "2023-07-10",
+  "dependsOn": [
+      ],
+  "sources": [
+    {
+      "link": "https://www.w3.org/TR/prov-o/",
+      "title": "The PROV-O vocabulary"
+    }
+  ],
+  "maturity": "development",
+  "scope": "unstable",
+  "tags": ["prov", "utils"]
+}
