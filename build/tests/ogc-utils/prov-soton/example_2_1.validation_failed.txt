@@ -1,10 +1,10 @@
 Validation report for ogc.ogc-utils.prov-soton - 2024 w3c
-Generated 2025-11-02T06:37:36.082833+00:00
+Generated 2025-11-02T06:37:36.088597+00:00
 === Files ===
-Using example_1_1.json from examples
+Using example_2_1.json from examples
 JSON-LD context is present - uplifting
-Output JSON-LD example_1_1.jsonld created
-Output Turtle example_1_1.ttl created
+Output JSON-LD example_2_1.jsonld created
+Output Turtle example_2_1.ttl created
 === End Files ===
 
 === JSON Schema ===
@@ -22,6 +22,14 @@ Failed validating 'required' in schema['allOf'][1]:
      'type': 'object'}
 
 On instance:
-    {'id': 'Object2', 'wasDerivedFrom': 'Object1'}
+    {'endedAtTime': '2029-01-01T22:05:19+02:00',
+     'id': 'someActivity_1',
+     'provType': 'Activity',
+     'used': {'id': 'Act3',
+              'links': [{'href': 'https://some.gov/linktoact/',
+                         'rel': 'related'}],
+              'provType': 'Entity',
+              'wasAttributedTo': 'eg_agents:Gov1'},
+     'wasAssociatedWith': 'eg_agents:bc-3'}
 === End JSON Schema ===
 

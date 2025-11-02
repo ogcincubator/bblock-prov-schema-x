@@ -6,7 +6,7 @@
       "$ref": "https://ogcincubator.github.io/bblock-prov-schema-x/build/annotated/ogc-utils/prov/schema.json"
     },
     {
-      "$ref": "https://www.w3.org/submissions/prov-json/schema"
+      "$ref": "https://www.w3.org/submissions/2024/SUBM-prov-jsonld-20240825/schema.json"
     }
   ],
   "x-jsonld-extra-terms": {

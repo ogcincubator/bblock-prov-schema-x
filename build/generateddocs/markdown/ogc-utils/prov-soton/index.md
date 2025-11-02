@@ -1,9 +1,9 @@
 
-# Cross2013 (Schema)
+# 2024 w3c (Schema)
 
 `ogc.ogc-utils.prov-soton` *v0.1*
 
-A BBlock to cross check examples across the University of Southampton 2013 W3C community submission
+A BBlock to cross check examples across the University of The PROV-JSONLD Serialization w3c member submission
 
 [*Status*](http://www.opengis.net/def/status): Under development
 
@@ -94,6 +94,54 @@ this is a simple activity referencing some relevant document
 
 
 
+
+
+```
+
+#### jsonld
+```jsonld
+{
+  "@context": [
+    {
+      "iana": "http://www.iana.org/assignments/"
+    },
+    "https://ogcincubator.github.io/bblock-prov-schema-x/build/annotated/ogc-utils/prov-soton/context.jsonld"
+  ],
+  "provType": "Activity",
+  "id": "someActivity_1",
+  "endedAtTime": "2029-01-01T22:05:19+02:00",
+  "wasAssociatedWith": "eg_agents:bc-3",
+  "used": {
+    "provType": "Entity",
+    "id": "Act3",
+    "wasAttributedTo": "eg_agents:Gov1",
+    "links": [
+      {
+        "href": "https://some.gov/linktoact/",
+        "rel": "related"
+      }
+    ]
+  }
+}
+```
+
+#### ttl
+```ttl
+@prefix iana: <http://www.iana.org/assignments/> .
+@prefix oa: <http://www.w3.org/ns/oa#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://www.example.com/exampleActivity/someActivity_1> a prov:Activity ;
+    prov:endedAtTime "2029-01-01T22:05:19+02:00"^^xsd:dateTime ;
+    prov:used <http://www.example.com/exampleActivity/Act3> ;
+    prov:wasAssociatedWith <http://www.example.com/exampleActivity/eg_agents:bc-3> .
+
+<http://www.example.com/exampleActivity/Act3> a prov:Entity ;
+    rdfs:seeAlso [ iana:relation <http://www.iana.org/assignments/relation/related> ;
+            oa:hasTarget <https://some.gov/linktoact/> ] ;
+    prov:wasAttributedTo <http://www.example.com/exampleActivity/eg_agents:Gov1> .
 
 
 ```
@@ -570,7 +618,7 @@ description: Provenance Chain using PROV-O core model supporting both an ID base
   object graph and nesting
 allOf:
 - $ref: https://ogcincubator.github.io/bblock-prov-schema-x/build/annotated/ogc-utils/prov/schema.yaml
-- $ref: https://www.w3.org/submissions/prov-json/schema
+- $ref: https://www.w3.org/submissions/2024/SUBM-prov-jsonld-20240825/schema.json
 x-jsonld-extra-terms:
   activityType: '@type'
   agentType: '@type'
@@ -1205,7 +1253,7 @@ You can find the full JSON-LD context here:
 
 ## Sources
 
-* [The PROV-O vocabulary](https://www.w3.org/TR/prov-o/)
+* [The PROV-JSONLD Serialization](https://www.w3.org/submissions/2024/SUBM-prov-jsonld-20240825/#Example)
 
 # For developers
 

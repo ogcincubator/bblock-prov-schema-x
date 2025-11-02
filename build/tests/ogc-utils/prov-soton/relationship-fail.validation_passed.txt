@@ -1,11 +1,11 @@
 Validation report for ogc.ogc-utils.prov-soton - 2024 w3c
-Generated 2025-11-02T06:37:36.079368+00:00
+Generated 2025-11-02T06:37:36.073386+00:00
 === General ===
 Test was expected to fail and it did.
 === End General ===
 
 === Files ===
-Using sequential-time-fail.json from test resources
+Using relationship-fail.json from test resources
 JSON-LD context is present - uplifting
 === End Files ===
 
@@ -33,15 +33,12 @@ On instance:
      'featureType': 'Survey',
      'id': 'DP-1',
      'type': 'Feature',
-     'wasGeneratedBy': ['surveyreg:DP-1-S1',
-                        {'activity': 'Registration',
-                         'endedAtTime': '2021-01-01',
-                         'id': 'surveyreg:DP-1-S2',
-                         'used': {'id': 'PriorThing',
-                                  'wasGeneratedBy': {'activity': 'SomethingImpossiblyAfter',
-                                                     'endedAtTime': '2029-01-01',
-                                                     'id': 'surveyreg:impossible'}},
-                         'wasAssociatedWith': 'agents:bc-3'}]}
+     'wasGeneratedBy': {'id': 'DP-2223',
+                        'type': 'Entity',
+                        'wasGeneratedBy': {'endedAtTime': '2023-10-05',
+                                           'id': 'thing:DP-1-S1',
+                                           'type': 'Activity',
+                                           'wasAssociatedWith': 'agents:ah-2344503'}}}
 === End JSON Schema ===
 
 === JSON-LD ===
@@ -60,21 +57,7 @@ Traceback (most recent call last):
     return conv_func(lexical)  # type: ignore[arg-type]
   File "/venv/lib/python3.10/site-packages/isodate/isodatetime.py", line 53, in parse_datetime
     raise ISO8601Error("ISO 8601 time designator 'T' missing. Unable to"
-isodate.isoerror.ISO8601Error: ISO 8601 time designator 'T' missing. Unable to parse datetime string '2021-01-01'
-Failed to convert Literal lexical form to value. Datatype=http://www.w3.org/2001/XMLSchema#dateTime, Converter=<function parse_datetime at 0x7f1a909960e0>
-Traceback (most recent call last):
-  File "/venv/lib/python3.10/site-packages/isodate/isodatetime.py", line 51, in parse_datetime
-    datestring, timestring = datetimestring.split('T')
-ValueError: not enough values to unpack (expected 2, got 1)
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "/venv/lib/python3.10/site-packages/rdflib/term.py", line 2084, in _castLexicalToPython
-    return conv_func(lexical)  # type: ignore[arg-type]
-  File "/venv/lib/python3.10/site-packages/isodate/isodatetime.py", line 53, in parse_datetime
-    raise ISO8601Error("ISO 8601 time designator 'T' missing. Unable to"
-isodate.isoerror.ISO8601Error: ISO 8601 time designator 'T' missing. Unable to parse datetime string '2029-01-01'
+isodate.isoerror.ISO8601Error: ISO 8601 time designator 'T' missing. Unable to parse datetime string '2023-10-05'
 
 === End JSON-LD ===
 

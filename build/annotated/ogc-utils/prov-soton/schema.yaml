@@ -3,7 +3,7 @@ description: Provenance Chain using PROV-O core model supporting both an ID base
   object graph and nesting
 allOf:
 - $ref: https://ogcincubator.github.io/bblock-prov-schema-x/build/annotated/ogc-utils/prov/schema.yaml
-- $ref: https://www.w3.org/submissions/prov-json/schema
+- $ref: https://www.w3.org/submissions/2024/SUBM-prov-jsonld-20240825/schema.json
 x-jsonld-extra-terms:
   activityType: '@type'
   agentType: '@type'
