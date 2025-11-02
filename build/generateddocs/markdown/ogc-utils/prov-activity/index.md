@@ -49,7 +49,7 @@ this is a simple activity referencing some relevant document
     {
       "iana": "http://www.iana.org/assignments/"
     },
-    "https://ogcincubator.github.io/bblock-prov-schema/build/annotated/ogc-utils/prov-activity/context.jsonld"
+    "https://ogcincubator.github.io/bblock-prov-schema-x/build/annotated/ogc-utils/prov-activity/context.jsonld"
   ],
   "provType": "Activity",
   "id": "someActivity_1",
@@ -153,7 +153,7 @@ This is a fairly trivial example not attempting to standardise descriptions of s
     {
       "iana": "http://www.iana.org/assignments/"
     },
-    "https://ogcincubator.github.io/bblock-prov-schema/build/annotated/ogc-utils/prov-activity/context.jsonld"
+    "https://ogcincubator.github.io/bblock-prov-schema-x/build/annotated/ogc-utils/prov-activity/context.jsonld"
   ],
   "prov:type": "prov:Activity",
   "generated": {
@@ -254,66 +254,66 @@ $defs:
     type: object
     properties:
       id:
-        $ref: https://ogcincubator.github.io/bblock-prov-schema/build/annotated/ogc-utils/prov/schema.yaml#objectref
+        $ref: https://ogcincubator.github.io/bblock-prov-schema-x/build/annotated/ogc-utils/prov/schema.yaml#objectref
       type:
         $ref: '#/$defs/ActivityTypes'
       activityType:
-        $ref: https://ogcincubator.github.io/bblock-prov-schema/build/annotated/ogc-utils/prov/schema.yaml#oneOrMoreObjectref
+        $ref: https://ogcincubator.github.io/bblock-prov-schema-x/build/annotated/ogc-utils/prov/schema.yaml#oneOrMoreObjectref
       prov:type:
         $ref: '#/$defs/ActivityTypes'
       endedAtTime:
         $ref: '#/$defs/dateTime'
       wasAssociatedWith:
-        $ref: https://ogcincubator.github.io/bblock-prov-schema/build/annotated/ogc-utils/prov/schema.yaml#oneOrMoreAgentsOrRefIds
+        $ref: https://ogcincubator.github.io/bblock-prov-schema-x/build/annotated/ogc-utils/prov/schema.yaml#oneOrMoreAgentsOrRefIds
       wasInformedBy:
-        $ref: https://ogcincubator.github.io/bblock-prov-schema/build/annotated/ogc-utils/prov/schema.yaml#oneOrMoreActivitiesOrRefIds
+        $ref: https://ogcincubator.github.io/bblock-prov-schema-x/build/annotated/ogc-utils/prov/schema.yaml#oneOrMoreActivitiesOrRefIds
       used:
-        $ref: https://ogcincubator.github.io/bblock-prov-schema/build/annotated/ogc-utils/prov/schema.yaml#oneOrMoreEntitiesOrRefIds
+        $ref: https://ogcincubator.github.io/bblock-prov-schema-x/build/annotated/ogc-utils/prov/schema.yaml#oneOrMoreEntitiesOrRefIds
       wasStartedBy:
-        $ref: https://ogcincubator.github.io/bblock-prov-schema/build/annotated/ogc-utils/prov/schema.yaml#oneOrMoreEntitiesOrRefIds
+        $ref: https://ogcincubator.github.io/bblock-prov-schema-x/build/annotated/ogc-utils/prov/schema.yaml#oneOrMoreEntitiesOrRefIds
       wasEndedBy:
-        $ref: https://ogcincubator.github.io/bblock-prov-schema/build/annotated/ogc-utils/prov/schema.yaml#oneOrMoreEntitiesOrRefIds
+        $ref: https://ogcincubator.github.io/bblock-prov-schema-x/build/annotated/ogc-utils/prov/schema.yaml#oneOrMoreEntitiesOrRefIds
       invalidated:
-        $ref: https://ogcincubator.github.io/bblock-prov-schema/build/annotated/ogc-utils/prov/schema.yaml#oneOrMoreEntitiesOrRefIds
+        $ref: https://ogcincubator.github.io/bblock-prov-schema-x/build/annotated/ogc-utils/prov/schema.yaml#oneOrMoreEntitiesOrRefIds
       generated:
-        $ref: https://ogcincubator.github.io/bblock-prov-schema/build/annotated/ogc-utils/prov/schema.yaml#oneOrMoreEntitiesOrRefIds
+        $ref: https://ogcincubator.github.io/bblock-prov-schema-x/build/annotated/ogc-utils/prov/schema.yaml#oneOrMoreEntitiesOrRefIds
       atLocation:
-        $ref: https://ogcincubator.github.io/bblock-prov-schema/build/annotated/ogc-utils/prov/schema.yaml#objectref
+        $ref: https://ogcincubator.github.io/bblock-prov-schema-x/build/annotated/ogc-utils/prov/schema.yaml#objectref
       qualifiedUsage:
         oneOf:
-        - $ref: https://ogcincubator.github.io/bblock-prov-schema/build/annotated/ogc-utils/prov/schema.yaml#objectref
+        - $ref: https://ogcincubator.github.io/bblock-prov-schema-x/build/annotated/ogc-utils/prov/schema.yaml#objectref
         - $ref: '#/$defs/Usage'
         - type: array
           items:
             oneOf:
-            - $ref: https://ogcincubator.github.io/bblock-prov-schema/build/annotated/ogc-utils/prov/schema.yaml#objectref
+            - $ref: https://ogcincubator.github.io/bblock-prov-schema-x/build/annotated/ogc-utils/prov/schema.yaml#objectref
             - $ref: '#/$defs/Usage'
       qualifiedCommunication:
         oneOf:
-        - $ref: https://ogcincubator.github.io/bblock-prov-schema/build/annotated/ogc-utils/prov/schema.yaml#objectref
+        - $ref: https://ogcincubator.github.io/bblock-prov-schema-x/build/annotated/ogc-utils/prov/schema.yaml#objectref
         - $ref: '#/$defs/Communication'
         - type: array
           items:
             oneOf:
-            - $ref: https://ogcincubator.github.io/bblock-prov-schema/build/annotated/ogc-utils/prov/schema.yaml#objectref
+            - $ref: https://ogcincubator.github.io/bblock-prov-schema-x/build/annotated/ogc-utils/prov/schema.yaml#objectref
             - $ref: '#/$defs/Generation'
       qualifiedStart:
         oneOf:
-        - $ref: https://ogcincubator.github.io/bblock-prov-schema/build/annotated/ogc-utils/prov/schema.yaml#objectref
+        - $ref: https://ogcincubator.github.io/bblock-prov-schema-x/build/annotated/ogc-utils/prov/schema.yaml#objectref
         - $ref: '#/$defs/Start'
       qualifiedEnd:
         oneOf:
-        - $ref: https://ogcincubator.github.io/bblock-prov-schema/build/annotated/ogc-utils/prov/schema.yaml#objectref
+        - $ref: https://ogcincubator.github.io/bblock-prov-schema-x/build/annotated/ogc-utils/prov/schema.yaml#objectref
         - $ref: '#/$defs/End'
       qualifiedAssociation:
         oneOf:
-        - $ref: https://ogcincubator.github.io/bblock-prov-schema/build/annotated/ogc-utils/prov/schema.yaml#objectref
-        - $ref: https://ogcincubator.github.io/bblock-prov-schema/build/annotated/ogc-utils/prov/schema.yaml#Association
+        - $ref: https://ogcincubator.github.io/bblock-prov-schema-x/build/annotated/ogc-utils/prov/schema.yaml#objectref
+        - $ref: https://ogcincubator.github.io/bblock-prov-schema-x/build/annotated/ogc-utils/prov/schema.yaml#Association
         - type: array
           items:
             oneOf:
-            - $ref: https://ogcincubator.github.io/bblock-prov-schema/build/annotated/ogc-utils/prov/schema.yaml#objectref
-            - $ref: https://ogcincubator.github.io/bblock-prov-schema/build/annotated/ogc-utils/prov/schema.yaml#Association
+            - $ref: https://ogcincubator.github.io/bblock-prov-schema-x/build/annotated/ogc-utils/prov/schema.yaml#objectref
+            - $ref: https://ogcincubator.github.io/bblock-prov-schema-x/build/annotated/ogc-utils/prov/schema.yaml#Association
     anyOf:
     - required:
       - activityType
@@ -332,13 +332,13 @@ $defs:
     - required:
       - wasAssociatedWith
     allOf:
-    - $ref: https://ogcincubator.github.io/bblock-prov-schema/build/annotated/ogc-utils/prov/schema.yaml#influenced
+    - $ref: https://ogcincubator.github.io/bblock-prov-schema-x/build/annotated/ogc-utils/prov/schema.yaml#influenced
   Usage:
     $anchor: Usage
     type: object
     properties:
       id:
-        $ref: https://ogcincubator.github.io/bblock-prov-schema/build/annotated/ogc-utils/prov/schema.yaml#objectref
+        $ref: https://ogcincubator.github.io/bblock-prov-schema-x/build/annotated/ogc-utils/prov/schema.yaml#objectref
       type:
         oneOf:
         - type: string
@@ -356,7 +356,7 @@ $defs:
       atTime:
         $ref: '#/$defs/dateTime'
       entity:
-        $ref: https://ogcincubator.github.io/bblock-prov-schema/build/annotated/ogc-utils/prov/schema.yaml#oneOrMoreEntitiesOrRefIds
+        $ref: https://ogcincubator.github.io/bblock-prov-schema-x/build/annotated/ogc-utils/prov/schema.yaml#oneOrMoreEntitiesOrRefIds
     required:
     - entity
   ActivityInfluence:
@@ -364,17 +364,17 @@ $defs:
     type: object
     properties:
       id:
-        $ref: https://ogcincubator.github.io/bblock-prov-schema/build/annotated/ogc-utils/prov/schema.yaml#objectref
+        $ref: https://ogcincubator.github.io/bblock-prov-schema-x/build/annotated/ogc-utils/prov/schema.yaml#objectref
       atTime:
         $ref: '#/$defs/dateTime'
       hadRole:
-        $ref: https://ogcincubator.github.io/bblock-prov-schema/build/annotated/ogc-utils/prov/schema.yaml#oneOrMoreObjectref
+        $ref: https://ogcincubator.github.io/bblock-prov-schema-x/build/annotated/ogc-utils/prov/schema.yaml#oneOrMoreObjectref
       influencer:
-        $ref: https://ogcincubator.github.io/bblock-prov-schema/build/annotated/ogc-utils/prov/schema.yaml#oneOrMoreObjectref
+        $ref: https://ogcincubator.github.io/bblock-prov-schema-x/build/annotated/ogc-utils/prov/schema.yaml#oneOrMoreObjectref
       hadActivity:
-        $ref: https://ogcincubator.github.io/bblock-prov-schema/build/annotated/ogc-utils/prov/schema.yaml#oneOrMoreActivitiesOrRefIds
+        $ref: https://ogcincubator.github.io/bblock-prov-schema-x/build/annotated/ogc-utils/prov/schema.yaml#oneOrMoreActivitiesOrRefIds
       activity:
-        $ref: https://ogcincubator.github.io/bblock-prov-schema/build/annotated/ogc-utils/prov/schema.yaml#oneOrMoreActivitiesOrRefIds
+        $ref: https://ogcincubator.github.io/bblock-prov-schema-x/build/annotated/ogc-utils/prov/schema.yaml#oneOrMoreActivitiesOrRefIds
   Generation:
     $anchor: Generation
     allOf:
@@ -434,7 +434,7 @@ $defs:
     type: object
     properties:
       id:
-        $ref: https://ogcincubator.github.io/bblock-prov-schema/build/annotated/ogc-utils/prov/schema.yaml#objectref
+        $ref: https://ogcincubator.github.io/bblock-prov-schema-x/build/annotated/ogc-utils/prov/schema.yaml#objectref
       type:
         oneOf:
         - type: string
@@ -447,20 +447,20 @@ $defs:
             type: string
       hadGeneration:
         oneOf:
-        - $ref: https://ogcincubator.github.io/bblock-prov-schema/build/annotated/ogc-utils/prov/schema.yaml#objectref
+        - $ref: https://ogcincubator.github.io/bblock-prov-schema-x/build/annotated/ogc-utils/prov/schema.yaml#objectref
         - $ref: '#/$defs/Generation'
       hadActivity:
         oneOf:
-        - $ref: https://ogcincubator.github.io/bblock-prov-schema/build/annotated/ogc-utils/prov/schema.yaml#objectref
+        - $ref: https://ogcincubator.github.io/bblock-prov-schema-x/build/annotated/ogc-utils/prov/schema.yaml#objectref
         - $ref: '#/$defs/Activity'
       hadUsage:
         oneOf:
-        - $ref: https://ogcincubator.github.io/bblock-prov-schema/build/annotated/ogc-utils/prov/schema.yaml#objectref
+        - $ref: https://ogcincubator.github.io/bblock-prov-schema-x/build/annotated/ogc-utils/prov/schema.yaml#objectref
         - $ref: '#/$defs/Usage'
       entity:
         oneOf:
-        - $ref: https://ogcincubator.github.io/bblock-prov-schema/build/annotated/ogc-utils/prov/schema.yaml#objectref
-        - $ref: https://ogcincubator.github.io/bblock-prov-schema/build/annotated/ogc-utils/prov/schema.yaml#Entity
+        - $ref: https://ogcincubator.github.io/bblock-prov-schema-x/build/annotated/ogc-utils/prov/schema.yaml#objectref
+        - $ref: https://ogcincubator.github.io/bblock-prov-schema-x/build/annotated/ogc-utils/prov/schema.yaml#Entity
     required:
     - atTime
     - entity
@@ -469,7 +469,7 @@ $defs:
     type: object
     properties:
       id:
-        $ref: https://ogcincubator.github.io/bblock-prov-schema/build/annotated/ogc-utils/prov/schema.yaml#objectref
+        $ref: https://ogcincubator.github.io/bblock-prov-schema-x/build/annotated/ogc-utils/prov/schema.yaml#objectref
       type:
         oneOf:
         - type: string
@@ -482,18 +482,18 @@ $defs:
             type: string
       agent:
         oneOf:
-        - $ref: https://ogcincubator.github.io/bblock-prov-schema/build/annotated/ogc-utils/prov/schema.yaml#objectref
-        - $ref: https://ogcincubator.github.io/bblock-prov-schema/build/annotated/ogc-utils/prov/schema.yaml#Agent
+        - $ref: https://ogcincubator.github.io/bblock-prov-schema-x/build/annotated/ogc-utils/prov/schema.yaml#objectref
+        - $ref: https://ogcincubator.github.io/bblock-prov-schema-x/build/annotated/ogc-utils/prov/schema.yaml#Agent
       hadActivity:
         oneOf:
-        - $ref: https://ogcincubator.github.io/bblock-prov-schema/build/annotated/ogc-utils/prov/schema.yaml#objectref
+        - $ref: https://ogcincubator.github.io/bblock-prov-schema-x/build/annotated/ogc-utils/prov/schema.yaml#objectref
         - $ref: '#/$defs/Activity'
   Attribution:
     $anchor: Attribution
     type: object
     properties:
       id:
-        $ref: https://ogcincubator.github.io/bblock-prov-schema/build/annotated/ogc-utils/prov/schema.yaml#objectref
+        $ref: https://ogcincubator.github.io/bblock-prov-schema-x/build/annotated/ogc-utils/prov/schema.yaml#objectref
       type:
         oneOf:
         - type: string
@@ -506,13 +506,13 @@ $defs:
             type: string
       agent:
         oneOf:
-        - $ref: https://ogcincubator.github.io/bblock-prov-schema/build/annotated/ogc-utils/prov/schema.yaml#objectref
-        - $ref: https://ogcincubator.github.io/bblock-prov-schema/build/annotated/ogc-utils/prov/schema.yaml#Agent
+        - $ref: https://ogcincubator.github.io/bblock-prov-schema-x/build/annotated/ogc-utils/prov/schema.yaml#objectref
+        - $ref: https://ogcincubator.github.io/bblock-prov-schema-x/build/annotated/ogc-utils/prov/schema.yaml#Agent
   StartOrEnd:
     type: object
     properties:
       id:
-        $ref: https://ogcincubator.github.io/bblock-prov-schema/build/annotated/ogc-utils/prov/schema.yaml#objectref
+        $ref: https://ogcincubator.github.io/bblock-prov-schema-x/build/annotated/ogc-utils/prov/schema.yaml#objectref
       type:
         oneOf:
         - type: string
@@ -523,11 +523,11 @@ $defs:
         $ref: '#/$defs/dateTime'
       entity:
         oneOf:
-        - $ref: https://ogcincubator.github.io/bblock-prov-schema/build/annotated/ogc-utils/prov/schema.yaml#objectref
-        - $ref: https://ogcincubator.github.io/bblock-prov-schema/build/annotated/ogc-utils/prov/schema.yaml#Entity
+        - $ref: https://ogcincubator.github.io/bblock-prov-schema-x/build/annotated/ogc-utils/prov/schema.yaml#objectref
+        - $ref: https://ogcincubator.github.io/bblock-prov-schema-x/build/annotated/ogc-utils/prov/schema.yaml#Entity
       hadActivity:
         oneOf:
-        - $ref: https://ogcincubator.github.io/bblock-prov-schema/build/annotated/ogc-utils/prov/schema.yaml#objectref
+        - $ref: https://ogcincubator.github.io/bblock-prov-schema-x/build/annotated/ogc-utils/prov/schema.yaml#objectref
         - $ref: '#/$defs/Activity'
     required:
     - atTime
@@ -556,8 +556,8 @@ anyOf:
 
 Links to the schema:
 
-* YAML version: [schema.yaml](https://ogcincubator.github.io/bblock-prov-schema/build/annotated/ogc-utils/prov-activity/schema.json)
-* JSON version: [schema.json](https://ogcincubator.github.io/bblock-prov-schema/build/annotated/ogc-utils/prov-activity/schema.yaml)
+* YAML version: [schema.yaml](https://ogcincubator.github.io/bblock-prov-schema-x/build/annotated/ogc-utils/prov-activity/schema.json)
+* JSON version: [schema.json](https://ogcincubator.github.io/bblock-prov-schema-x/build/annotated/ogc-utils/prov-activity/schema.yaml)
 
 
 # JSON-LD Context
@@ -916,7 +916,7 @@ Links to the schema:
 ```
 
 You can find the full JSON-LD context here:
-[context.jsonld](https://ogcincubator.github.io/bblock-prov-schema/build/annotated/ogc-utils/prov-activity/context.jsonld)
+[context.jsonld](https://ogcincubator.github.io/bblock-prov-schema-x/build/annotated/ogc-utils/prov-activity/context.jsonld)
 
 ## Sources
 
@@ -926,6 +926,6 @@ You can find the full JSON-LD context here:
 
 The source code for this Building Block can be found in the following repository:
 
-* URL: [https://github.com/ogcincubator/bblock-prov-schema](https://github.com/ogcincubator/bblock-prov-schema)
+* URL: [https://github.com/ogcincubator/bblock-prov-schema-x](https://github.com/ogcincubator/bblock-prov-schema-x)
 * Path: `_sources/prov-activity`
 

@@ -67,24 +67,24 @@ $defs:
     type: object
     properties:
       agentType:
-        $ref: https://ogcincubator.github.io/bblock-prov-schema/build/annotated/ogc-utils/prov/schema.yaml#oneOrMoreObjectref
+        $ref: https://ogcincubator.github.io/bblock-prov-schema-x/build/annotated/ogc-utils/prov/schema.yaml#oneOrMoreObjectref
       name:
         type: string
       id:
-        $ref: https://ogcincubator.github.io/bblock-prov-schema/build/annotated/ogc-utils/prov/schema.yaml#objectref
+        $ref: https://ogcincubator.github.io/bblock-prov-schema-x/build/annotated/ogc-utils/prov/schema.yaml#objectref
       actedOnBehalfOf:
-        $ref: https://ogcincubator.github.io/bblock-prov-schema/build/annotated/ogc-utils/prov/schema.yaml#oneOrMoreAgentsOrRefIds
+        $ref: https://ogcincubator.github.io/bblock-prov-schema-x/build/annotated/ogc-utils/prov/schema.yaml#oneOrMoreAgentsOrRefIds
       atLocation:
-        $ref: https://ogcincubator.github.io/bblock-prov-schema/build/annotated/ogc-utils/prov/schema.yaml#objectref
+        $ref: https://ogcincubator.github.io/bblock-prov-schema-x/build/annotated/ogc-utils/prov/schema.yaml#objectref
       qualifiedDelegation:
         oneOf:
-        - $ref: https://ogcincubator.github.io/bblock-prov-schema/build/annotated/ogc-utils/prov/schema.yaml#objectref
-        - $ref: https://ogcincubator.github.io/bblock-prov-schema/build/annotated/ogc-utils/prov-activity/schema.yaml#Delegation
+        - $ref: https://ogcincubator.github.io/bblock-prov-schema-x/build/annotated/ogc-utils/prov/schema.yaml#objectref
+        - $ref: https://ogcincubator.github.io/bblock-prov-schema-x/build/annotated/ogc-utils/prov-activity/schema.yaml#Delegation
         - type: array
           items:
             oneOf:
-            - $ref: https://ogcincubator.github.io/bblock-prov-schema/build/annotated/ogc-utils/prov/schema.yaml#objectref
-            - $ref: https://ogcincubator.github.io/bblock-prov-schema/build/annotated/ogc-utils/prov-activity/schema.yaml#Delegation
+            - $ref: https://ogcincubator.github.io/bblock-prov-schema-x/build/annotated/ogc-utils/prov/schema.yaml#objectref
+            - $ref: https://ogcincubator.github.io/bblock-prov-schema-x/build/annotated/ogc-utils/prov-activity/schema.yaml#Delegation
     oneOf:
     - required:
       - name
@@ -114,13 +114,13 @@ $defs:
     - required:
       - actedOnBehalfOf
     allOf:
-    - $ref: https://ogcincubator.github.io/bblock-prov-schema/build/annotated/ogc-utils/prov/schema.yaml#influenced
+    - $ref: https://ogcincubator.github.io/bblock-prov-schema-x/build/annotated/ogc-utils/prov/schema.yaml#influenced
   Association:
     $anchor: Association
     type: object
     properties:
       id:
-        $ref: https://ogcincubator.github.io/bblock-prov-schema/build/annotated/ogc-utils/prov/schema.yaml#objectref
+        $ref: https://ogcincubator.github.io/bblock-prov-schema-x/build/annotated/ogc-utils/prov/schema.yaml#objectref
       type:
         oneOf:
         - type: string
@@ -133,12 +133,12 @@ $defs:
             type: string
       agent:
         oneOf:
-        - $ref: https://ogcincubator.github.io/bblock-prov-schema/build/annotated/ogc-utils/prov/schema.yaml#objectref
+        - $ref: https://ogcincubator.github.io/bblock-prov-schema-x/build/annotated/ogc-utils/prov/schema.yaml#objectref
         - $ref: '#/$defs/Agent'
       hadRole:
-        $ref: https://ogcincubator.github.io/bblock-prov-schema/build/annotated/ogc-utils/prov/schema.yaml#oneOrMoreObjectref
+        $ref: https://ogcincubator.github.io/bblock-prov-schema-x/build/annotated/ogc-utils/prov/schema.yaml#oneOrMoreObjectref
       hadPlan:
-        $ref: https://ogcincubator.github.io/bblock-prov-schema/build/annotated/ogc-utils/prov/schema.yaml#oneOrMoreObjectref
+        $ref: https://ogcincubator.github.io/bblock-prov-schema-x/build/annotated/ogc-utils/prov/schema.yaml#oneOrMoreObjectref
 anyOf:
 - $ref: '#/$defs/Agent'
 
@@ -146,8 +146,8 @@ anyOf:
 
 Links to the schema:
 
-* YAML version: [schema.yaml](https://ogcincubator.github.io/bblock-prov-schema/build/annotated/ogc-utils/prov-agent/schema.json)
-* JSON version: [schema.json](https://ogcincubator.github.io/bblock-prov-schema/build/annotated/ogc-utils/prov-agent/schema.yaml)
+* YAML version: [schema.yaml](https://ogcincubator.github.io/bblock-prov-schema-x/build/annotated/ogc-utils/prov-agent/schema.json)
+* JSON version: [schema.json](https://ogcincubator.github.io/bblock-prov-schema-x/build/annotated/ogc-utils/prov-agent/schema.yaml)
 
 
 # JSON-LD Context
@@ -506,7 +506,7 @@ Links to the schema:
 ```
 
 You can find the full JSON-LD context here:
-[context.jsonld](https://ogcincubator.github.io/bblock-prov-schema/build/annotated/ogc-utils/prov-agent/context.jsonld)
+[context.jsonld](https://ogcincubator.github.io/bblock-prov-schema-x/build/annotated/ogc-utils/prov-agent/context.jsonld)
 
 ## Sources
 
@@ -516,6 +516,6 @@ You can find the full JSON-LD context here:
 
 The source code for this Building Block can be found in the following repository:
 
-* URL: [https://github.com/ogcincubator/bblock-prov-schema](https://github.com/ogcincubator/bblock-prov-schema)
+* URL: [https://github.com/ogcincubator/bblock-prov-schema-x](https://github.com/ogcincubator/bblock-prov-schema-x)
 * Path: `_sources/prov-agent`
 

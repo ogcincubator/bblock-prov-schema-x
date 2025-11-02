@@ -53,7 +53,7 @@ likewise the use of the property `type` is not specified to allow compatibility 
     {
       "iana": "http://www.iana.org/assignments/"
     },
-    "https://ogcincubator.github.io/bblock-prov-schema/build/annotated/ogc-utils/prov/context.jsonld"
+    "https://ogcincubator.github.io/bblock-prov-schema-x/build/annotated/ogc-utils/prov/context.jsonld"
   ],
   "id": "Object2",
   "wasDerivedFrom": "Object1"
@@ -105,7 +105,7 @@ this is a simple activity referencing some relevant document
     {
       "iana": "http://www.iana.org/assignments/"
     },
-    "https://ogcincubator.github.io/bblock-prov-schema/build/annotated/ogc-utils/prov/context.jsonld"
+    "https://ogcincubator.github.io/bblock-prov-schema-x/build/annotated/ogc-utils/prov/context.jsonld"
   ],
   "provType": "Activity",
   "id": "someActivity_1",
@@ -234,7 +234,7 @@ DAG defined by an object list.
     {
       "iana": "http://www.iana.org/assignments/"
     },
-    "https://ogcincubator.github.io/bblock-prov-schema/build/annotated/ogc-utils/prov/context.jsonld",
+    "https://ogcincubator.github.io/bblock-prov-schema-x/build/annotated/ogc-utils/prov/context.jsonld",
     {
       "@base": "https://example.org/aThing/",
       "agents": "https://someagentregister.eg/",
@@ -411,7 +411,7 @@ A [qualified generation](https://www.w3.org/TR/prov-o/#qualifiedGeneration) exam
     {
       "iana": "http://www.iana.org/assignments/"
     },
-    "https://ogcincubator.github.io/bblock-prov-schema/build/annotated/ogc-utils/prov/context.jsonld",
+    "https://ogcincubator.github.io/bblock-prov-schema-x/build/annotated/ogc-utils/prov/context.jsonld",
     {
       "@base": "https://example.org/aThing/",
       "agents": "https://someagentregister.eg/",
@@ -538,7 +538,142 @@ This is a fairly trivial example not attempting to standardise descriptions of s
     {
       "iana": "http://www.iana.org/assignments/"
     },
-    "https://ogcincubator.github.io/bblock-prov-schema/build/annotated/ogc-utils/prov/context.jsonld"
+    "https://ogcincubator.github.io/bblock-prov-schema-x/build/annotated/ogc-utils/prov/context.jsonld"
+  ],
+  "prov:type": "prov:Activity",
+  "generated": {
+    "id": "output",
+    "type": "Entity",
+    "AgentType": "SoftwareAgent",
+    "response": [
+      {
+        "id": "LLM Generated Code",
+        "type": "Entity",
+        "wasGeneratedBy": "gemini-1.5-pro-001",
+        "data": "gdf.to_crs(epsg=7856).set_index('name').loc['UNSW Village'].geometry.distance(gdf.to_crs(epsg=7856)[gdf.amenity == 'hospital'].geometry).min()"
+      },
+      {
+        "id": "Code Output",
+        "type": "Entity",
+        "data": "511.8048618048641"
+      },
+      {
+        "id": "Final Output",
+        "type": "Entity",
+        "wasGeneratedBy": "gemini-1.5-flash-001",
+        "data": "The closest hospital to UNSW Village is approximately 512 meters away."
+      }
+    ]
+  },
+  "startedAtTime": "2024-11-19T05:07:22.927913Z",
+  "endedAtTime": "2024-11-19T05:07:34.304708Z",
+  "used": [
+    {
+      "id": "file",
+      "type": "Entity",
+      "data": [
+        {
+          "id": "osmdata.shp",
+          "type": "Entity",
+          "records": 3544
+        }
+      ]
+    },
+    {
+      "id": "user_input",
+      "prov:type": "Entity",
+      "input": "How far away is the closest hospital from UNSW village"
+    }
+  ]
+}
+```
+
+#### ttl
+```ttl
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://www.example.com/exampleEntity/file> dcterms:type "Entity" .
+
+<http://www.example.com/exampleEntity/output> dcterms:type "Entity" .
+
+<http://www.example.com/exampleEntity/user_input> prov:type "Entity" .
+
+[] prov:endedAtTime "2024-11-19T05:07:34.304708+00:00"^^xsd:dateTime ;
+    prov:generated <http://www.example.com/exampleEntity/output> ;
+    prov:startedAtTime "2024-11-19T05:07:22.927913+00:00"^^xsd:dateTime ;
+    prov:type "prov:Activity" ;
+    prov:used <http://www.example.com/exampleEntity/file>,
+        <http://www.example.com/exampleEntity/user_input> .
+
+
+```
+
+
+### Workflow (using LLM) Example
+A provenance chain for a workflow using a Large Language Model to interpret a query and and a geospatial data source.
+
+This is a fairly trivial example not attempting to standardise descriptions of such workflows, which would be an obvious profile for this model.
+#### json
+```json
+{
+    "prov:type": "prov:Activity",
+    "generated": {
+        "id": "output",
+        "type": "Entity",
+        "AgentType": "SoftwareAgent",
+        "response": [
+            {
+                "id": "LLM Generated Code",
+                "type": "Entity",
+                "wasGeneratedBy": "gemini-1.5-pro-001",
+                "data": "gdf.to_crs(epsg=7856).set_index('name').loc['UNSW Village'].geometry.distance(gdf.to_crs(epsg=7856)[gdf.amenity == 'hospital'].geometry).min()"
+            },
+            {
+                "id": "Code Output",
+                "type": "Entity",
+                "data": "511.8048618048641"
+            },
+            {
+                "id": "Final Output",
+                "type": "Entity",
+                "wasGeneratedBy": "gemini-1.5-flash-001",
+                "data": "The closest hospital to UNSW Village is approximately 512 meters away."
+            }
+        ]
+    },
+    "startedAtTime": "2024-11-19T05:07:22.927913Z",
+    "endedAtTime": "2024-11-19T05:07:34.304708Z",
+    "used": [
+        {
+            "id": "file",
+            "type": "Entity",
+            "data": [
+                {
+                    "id": "osmdata.shp",
+                    "type": "Entity",
+                    "records": 3544
+                }
+            ]
+        },
+        {
+            "id": "user_input",
+            "prov:type": "Entity",
+            "input": "How far away is the closest hospital from UNSW village"
+        }
+    ]
+}
+```
+
+#### jsonld
+```jsonld
+{
+  "@context": [
+    {
+      "iana": "http://www.iana.org/assignments/"
+    },
+    "https://ogcincubator.github.io/bblock-prov-schema-x/build/annotated/ogc-utils/prov/context.jsonld"
   ],
   "prov:type": "prov:Activity",
   "generated": {
@@ -627,12 +762,12 @@ $defs:
     $anchor: oneOrMoreActivitiesOrRefIds
     oneOf:
     - $ref: '#objectref'
-    - $ref: https://ogcincubator.github.io/bblock-prov-schema/build/annotated/ogc-utils/prov/schema.yaml#Activity
+    - $ref: https://ogcincubator.github.io/bblock-prov-schema-x/build/annotated/ogc-utils/prov/schema.yaml#Activity
     - type: array
       items:
         anyOf:
         - $ref: '#objectref'
-        - $ref: https://ogcincubator.github.io/bblock-prov-schema/build/annotated/ogc-utils/prov/schema.yaml#Activity
+        - $ref: https://ogcincubator.github.io/bblock-prov-schema-x/build/annotated/ogc-utils/prov/schema.yaml#Activity
   oneOrMoreEntitiesOrRefIds:
     $anchor: oneOrMoreEntitiesOrRefIds
     oneOf:
@@ -659,40 +794,40 @@ $defs:
     $ref: https://opengeospatial.github.io/bblocks/annotated-schemas/ogc-utils/json-link/schema.yaml
   Entity:
     $anchor: Entity
-    $ref: https://ogcincubator.github.io/bblock-prov-schema/build/annotated/ogc-utils/prov-entity/schema.yaml
+    $ref: https://ogcincubator.github.io/bblock-prov-schema-x/build/annotated/ogc-utils/prov-entity/schema.yaml
   Activity:
     $anchor: Activity
-    $ref: https://ogcincubator.github.io/bblock-prov-schema/build/annotated/ogc-utils/prov-activity/schema.yaml
+    $ref: https://ogcincubator.github.io/bblock-prov-schema-x/build/annotated/ogc-utils/prov-activity/schema.yaml
   Agent:
     $anchor: Agent
-    $ref: https://ogcincubator.github.io/bblock-prov-schema/build/annotated/ogc-utils/prov-agent/schema.yaml
+    $ref: https://ogcincubator.github.io/bblock-prov-schema-x/build/annotated/ogc-utils/prov-agent/schema.yaml
   Association:
     $anchor: Association
-    $ref: https://ogcincubator.github.io/bblock-prov-schema/build/annotated/ogc-utils/prov-agent/schema.yaml#Association
+    $ref: https://ogcincubator.github.io/bblock-prov-schema-x/build/annotated/ogc-utils/prov-agent/schema.yaml#Association
   Influence:
     $anchor: Influence
     type: object
     properties:
       id:
-        $ref: https://ogcincubator.github.io/bblock-prov-schema/build/annotated/ogc-utils/prov/schema.yaml#objectref
+        $ref: https://ogcincubator.github.io/bblock-prov-schema-x/build/annotated/ogc-utils/prov/schema.yaml#objectref
         x-jsonld-id: '@id'
       influencer:
         anyOf:
-        - $ref: https://ogcincubator.github.io/bblock-prov-schema/build/annotated/ogc-utils/prov/schema.yaml#oneOrMoreActivitiesOrRefIds
-        - $ref: https://ogcincubator.github.io/bblock-prov-schema/build/annotated/ogc-utils/prov/schema.yaml#oneOrMoreEntitiesOrRefIds
-        - $ref: https://ogcincubator.github.io/bblock-prov-schema/build/annotated/ogc-utils/prov/schema.yaml#oneOrMoreAgentsOrRefIds
+        - $ref: https://ogcincubator.github.io/bblock-prov-schema-x/build/annotated/ogc-utils/prov/schema.yaml#oneOrMoreActivitiesOrRefIds
+        - $ref: https://ogcincubator.github.io/bblock-prov-schema-x/build/annotated/ogc-utils/prov/schema.yaml#oneOrMoreEntitiesOrRefIds
+        - $ref: https://ogcincubator.github.io/bblock-prov-schema-x/build/annotated/ogc-utils/prov/schema.yaml#oneOrMoreAgentsOrRefIds
         x-jsonld-id: http://www.w3.org/ns/prov#influencer
         x-jsonld-type: '@id'
       entity:
-        $ref: https://ogcincubator.github.io/bblock-prov-schema/build/annotated/ogc-utils/prov/schema.yaml#oneOrMoreEntitiesOrRefIds
+        $ref: https://ogcincubator.github.io/bblock-prov-schema-x/build/annotated/ogc-utils/prov/schema.yaml#oneOrMoreEntitiesOrRefIds
         x-jsonld-id: http://www.w3.org/ns/prov#entity
         x-jsonld-type: '@id'
       activity:
-        $ref: https://ogcincubator.github.io/bblock-prov-schema/build/annotated/ogc-utils/prov/schema.yaml#oneOrMoreActivitiesOrRefIds
+        $ref: https://ogcincubator.github.io/bblock-prov-schema-x/build/annotated/ogc-utils/prov/schema.yaml#oneOrMoreActivitiesOrRefIds
         x-jsonld-id: http://www.w3.org/ns/prov#activity
         x-jsonld-type: '@id'
       agent:
-        $ref: https://ogcincubator.github.io/bblock-prov-schema/build/annotated/ogc-utils/prov/schema.yaml#oneOrMoreAgentsOrRefIds
+        $ref: https://ogcincubator.github.io/bblock-prov-schema-x/build/annotated/ogc-utils/prov/schema.yaml#oneOrMoreAgentsOrRefIds
         x-jsonld-id: http://www.w3.org/ns/prov#agent
         x-jsonld-type: '@id'
     anyOf:
@@ -718,12 +853,12 @@ $defs:
       qualifiedInfluence:
         oneOf:
         - $ref: '#objectref'
-        - $ref: https://ogcincubator.github.io/bblock-prov-schema/build/annotated/ogc-utils/prov/schema.yaml#Influence
+        - $ref: https://ogcincubator.github.io/bblock-prov-schema-x/build/annotated/ogc-utils/prov/schema.yaml#Influence
         - type: array
           items:
             oneOf:
             - $ref: '#objectref'
-            - $ref: https://ogcincubator.github.io/bblock-prov-schema/build/annotated/ogc-utils/prov/schema.yaml#Influence
+            - $ref: https://ogcincubator.github.io/bblock-prov-schema-x/build/annotated/ogc-utils/prov/schema.yaml#Influence
         x-jsonld-id: http://www.w3.org/ns/prov#qualifiedInfluence
         x-jsonld-type: '@id'
   Prov:
@@ -1011,8 +1146,8 @@ x-jsonld-prefixes:
 
 Links to the schema:
 
-* YAML version: [schema.yaml](https://ogcincubator.github.io/bblock-prov-schema/build/annotated/ogc-utils/prov/schema.json)
-* JSON version: [schema.json](https://ogcincubator.github.io/bblock-prov-schema/build/annotated/ogc-utils/prov/schema.yaml)
+* YAML version: [schema.yaml](https://ogcincubator.github.io/bblock-prov-schema-x/build/annotated/ogc-utils/prov/schema.json)
+* JSON version: [schema.json](https://ogcincubator.github.io/bblock-prov-schema-x/build/annotated/ogc-utils/prov/schema.yaml)
 
 
 # JSON-LD Context
@@ -1371,7 +1506,7 @@ Links to the schema:
 ```
 
 You can find the full JSON-LD context here:
-[context.jsonld](https://ogcincubator.github.io/bblock-prov-schema/build/annotated/ogc-utils/prov/context.jsonld)
+[context.jsonld](https://ogcincubator.github.io/bblock-prov-schema-x/build/annotated/ogc-utils/prov/context.jsonld)
 
 ## Sources
 
@@ -1381,6 +1516,6 @@ You can find the full JSON-LD context here:
 
 The source code for this Building Block can be found in the following repository:
 
-* URL: [https://github.com/ogcincubator/bblock-prov-schema](https://github.com/ogcincubator/bblock-prov-schema)
+* URL: [https://github.com/ogcincubator/bblock-prov-schema-x](https://github.com/ogcincubator/bblock-prov-schema-x)
 * Path: `_sources/prov`
 

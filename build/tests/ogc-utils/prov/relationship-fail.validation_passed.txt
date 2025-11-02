@@ -1,5 +1,5 @@
 Validation report for ogc.ogc-utils.prov - Provenance Chain
-Generated 2025-10-16T07:55:14.218232+00:00
+Generated 2025-11-02T06:26:12.000603+00:00
 === General ===
 Test was expected to fail and it did.
 === End General ===
@@ -16,32 +16,32 @@ ValidationError: {'@context': {'@base': 'https://example.org/', 'agents': 'https
 
 Failed validating 'anyOf' in schema:
     {'$defs': {'Activity': {'$anchor': 'Activity',
-                            '$ref': 'https://ogcincubator.github.io/bblock-prov-schema/build/annotated/ogc-utils/prov-activity/schema.yaml'},
+                            '$ref': 'https://ogcincubator.github.io/bblock-prov-schema-x/build/annotated/ogc-utils/prov-activity/schema.yaml'},
                'Agent': {'$anchor': 'Agent',
-                         '$ref': 'https://ogcincubator.github.io/bblock-prov-schema/build/annotated/ogc-utils/prov-agent/schema.yaml'},
+                         '$ref': 'https://ogcincubator.github.io/bblock-prov-schema-x/build/annotated/ogc-utils/prov-agent/schema.yaml'},
                'Association': {'$anchor': 'Association',
-                               '$ref': 'https://ogcincubator.github.io/bblock-prov-schema/build/annotated/ogc-utils/prov-agent/schema.yaml#Association'},
+                               '$ref': 'https://ogcincubator.github.io/bblock-prov-schema-x/build/annotated/ogc-utils/prov-agent/schema.yaml#Association'},
                'Entity': {'$anchor': 'Entity',
-                          '$ref': 'https://ogcincubator.github.io/bblock-prov-schema/build/annotated/ogc-utils/prov-entity/schema.yaml'},
+                          '$ref': 'https://ogcincubator.github.io/bblock-prov-schema-x/build/annotated/ogc-utils/prov-entity/schema.yaml'},
                'Influence': {'$anchor': 'Influence',
                              'anyOf': [{'required': ['influencer']},
                                        {'required': ['entity']},
                                        {'required': ['activity']},
                                        {'required': ['agent']}],
-                             'properties': {'activity': {'$ref': 'https://ogcincubator.github.io/bblock-prov-schema/build/annotated/ogc-utils/prov/schema.yaml#oneOrMoreActivitiesOrRefIds',
+                             'properties': {'activity': {'$ref': 'https://ogcincubator.github.io/bblock-prov-schema-x/build/annotated/ogc-utils/prov/schema.yaml#oneOrMoreActivitiesOrRefIds',
                                                          'x-jsonld-id': 'http://www.w3.org/ns/prov#activity',
                                                          'x-jsonld-type': '@id'},
-                                            'agent': {'$ref': 'https://ogcincubator.github.io/bblock-prov-schema/build/annotated/ogc-utils/prov/schema.yaml#oneOrMoreAgentsOrRefIds',
+                                            'agent': {'$ref': 'https://ogcincubator.github.io/bblock-prov-schema-x/build/annotated/ogc-utils/prov/schema.yaml#oneOrMoreAgentsOrRefIds',
                                                       'x-jsonld-id': 'http://www.w3.org/ns/prov#agent',
                                                       'x-jsonld-type': '@id'},
-                                            'entity': {'$ref': 'https://ogcincubator.github.io/bblock-prov-schema/build/annotated/ogc-utils/prov/schema.yaml#oneOrMoreEntitiesOrRefIds',
+                                            'entity': {'$ref': 'https://ogcincubator.github.io/bblock-prov-schema-x/build/annotated/ogc-utils/prov/schema.yaml#oneOrMoreEntitiesOrRefIds',
                                                        'x-jsonld-id': 'http://www.w3.org/ns/prov#entity',
                                                        'x-jsonld-type': '@id'},
-                                            'id': {'$ref': 'https://ogcincubator.github.io/bblock-prov-schema/build/annotated/ogc-utils/prov/schema.yaml#objectref',
+                                            'id': {'$ref': 'https://ogcincubator.github.io/bblock-prov-schema-x/build/annotated/ogc-utils/prov/schema.yaml#objectref',
                                                    'x-jsonld-id': '@id'},
-                                            'influencer': {'anyOf': [{'$ref': 'https://ogcincubator.github.io/bblock-prov-schema/build/annotated/ogc-utils/prov/schema.yaml#oneOrMoreActivitiesOrRefIds'},
-                                                                     {'$ref': 'https://ogcincubator.github.io/bblock-prov-schema/build/annotated/ogc-utils/prov/schema.yaml#oneOrMoreEntitiesOrRefIds'},
-                                                                     {'$ref': 'https://ogcincubator.github.io/bblock-prov-schema/build/annotated/ogc-utils/prov/schema.yaml#oneOrMoreAgentsOrRefIds'}],
+                                            'influencer': {'anyOf': [{'$ref': 'https://ogcincubator.github.io/bblock-prov-schema-x/build/annotated/ogc-utils/prov/schema.yaml#oneOrMoreActivitiesOrRefIds'},
+                                                                     {'$ref': 'https://ogcincubator.github.io/bblock-prov-schema-x/build/annotated/ogc-utils/prov/schema.yaml#oneOrMoreEntitiesOrRefIds'},
+                                                                     {'$ref': 'https://ogcincubator.github.io/bblock-prov-schema-x/build/annotated/ogc-utils/prov/schema.yaml#oneOrMoreAgentsOrRefIds'}],
                                                            'x-jsonld-id': 'http://www.w3.org/ns/prov#influencer',
                                                            'x-jsonld-type': '@id'}},
                              'type': 'object'},
@@ -60,9 +60,9 @@ Failed validating 'anyOf' in schema:
                                 '$ref': 'https://opengeospatial.github.io/bblocks/annotated-schemas/ogc-utils/json-link/schema.yaml'},
                'influenced': {'$anchor': 'influenced',
                               'properties': {'qualifiedInfluence': {'oneOf': [{'$ref': '#objectref'},
-                                                                              {'$ref': 'https://ogcincubator.github.io/bblock-prov-schema/build/annotated/ogc-utils/prov/schema.yaml#Influence'},
+                                                                              {'$ref': 'https://ogcincubator.github.io/bblock-prov-schema-x/build/annotated/ogc-utils/prov/schema.yaml#Influence'},
                                                                               {'items': {'oneOf': [{'$ref': '#objectref'},
-                                                                                                   {'$ref': 'https://ogcincubator.github.io/bblock-prov-schema/build/annotated/ogc-utils/prov/schema.yaml#Influence'}]},
+                                                                                                   {'$ref': 'https://ogcincubator.github.io/bblock-prov-schema-x/build/annotated/ogc-utils/prov/schema.yaml#Influence'}]},
                                                                                'type': 'array'}],
                                                                     'x-jsonld-id': 'http://www.w3.org/ns/prov#qualifiedInfluence',
                                                                     'x-jsonld-type': '@id'},
@@ -76,9 +76,9 @@ Failed validating 'anyOf' in schema:
                              '$ref': 'https://opengeospatial.github.io/bblocks/annotated-schemas/ogc-utils/iri-or-curie/schema.yaml'},
                'oneOrMoreActivitiesOrRefIds': {'$anchor': 'oneOrMoreActivitiesOrRefIds',
                                                'oneOf': [{'$ref': '#objectref'},
-                                                         {'$ref': 'https://ogcincubator.github.io/bblock-prov-schema/build/annotated/ogc-utils/prov/schema.yaml#Activity'},
+                                                         {'$ref': 'https://ogcincubator.github.io/bblock-prov-schema-x/build/annotated/ogc-utils/prov/schema.yaml#Activity'},
                                                          {'items': {'anyOf': [{'$ref': '#objectref'},
-                                                                              {'$ref': 'https://ogcincubator.github.io/bblock-prov-schema/build/annotated/ogc-utils/prov/schema.yaml#Activity'}]},
+                                                                              {'$ref': 'https://ogcincubator.github.io/bblock-prov-schema-x/build/annotated/ogc-utils/prov/schema.yaml#Activity'}]},
                                                           'type': 'array'}]},
                'oneOrMoreAgentsOrRefIds': {'$anchor': 'oneOrMoreAgentsOrRefIds',
                                            'oneOf': [{'$ref': '#objectref'},
@@ -320,7 +320,7 @@ On instance:
 === JSON-LD ===
 
 ** Validation error **
-Error found when uplifting JSON-LD: Failed to convert Literal lexical form to value. Datatype=http://www.w3.org/2001/XMLSchema#dateTime, Converter=<function parse_datetime at 0x7ff7697ea0e0>
+Error found when uplifting JSON-LD: Failed to convert Literal lexical form to value. Datatype=http://www.w3.org/2001/XMLSchema#dateTime, Converter=<function parse_datetime at 0x7fa5a2c9a0e0>
 Traceback (most recent call last):
   File "/venv/lib/python3.10/site-packages/isodate/isodatetime.py", line 51, in parse_datetime
     datestring, timestring = datetimestring.split('T')

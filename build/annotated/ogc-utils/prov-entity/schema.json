@@ -30,70 +30,70 @@
       "type": "object",
       "properties": {
         "id": {
-          "$ref": "https://ogcincubator.github.io/bblock-prov-schema/build/annotated/ogc-utils/prov/schema.json#objectref"
+          "$ref": "https://ogcincubator.github.io/bblock-prov-schema-x/build/annotated/ogc-utils/prov/schema.json#objectref"
         },
         "featureType": {
-          "$ref": "https://ogcincubator.github.io/bblock-prov-schema/build/annotated/ogc-utils/prov/schema.json#oneOrMoreObjectref"
+          "$ref": "https://ogcincubator.github.io/bblock-prov-schema-x/build/annotated/ogc-utils/prov/schema.json#oneOrMoreObjectref"
         },
         "entityType": {
-          "$ref": "https://ogcincubator.github.io/bblock-prov-schema/build/annotated/ogc-utils/prov/schema.json#oneOrMoreObjectref"
+          "$ref": "https://ogcincubator.github.io/bblock-prov-schema-x/build/annotated/ogc-utils/prov/schema.json#oneOrMoreObjectref"
         },
         "has_provenance": {
-          "$ref": "https://ogcincubator.github.io/bblock-prov-schema/build/annotated/ogc-utils/prov/schema.json#Prov"
+          "$ref": "https://ogcincubator.github.io/bblock-prov-schema-x/build/annotated/ogc-utils/prov/schema.json#Prov"
         },
         "wasGeneratedBy": {
-          "$ref": "https://ogcincubator.github.io/bblock-prov-schema/build/annotated/ogc-utils/prov/schema.json#oneOrMoreActivitiesOrRefIds"
+          "$ref": "https://ogcincubator.github.io/bblock-prov-schema-x/build/annotated/ogc-utils/prov/schema.json#oneOrMoreActivitiesOrRefIds"
         },
         "wasAttributedTo": {
-          "$ref": "https://ogcincubator.github.io/bblock-prov-schema/build/annotated/ogc-utils/prov/schema.json#oneOrMoreAgentsOrRefIds"
+          "$ref": "https://ogcincubator.github.io/bblock-prov-schema-x/build/annotated/ogc-utils/prov/schema.json#oneOrMoreAgentsOrRefIds"
         },
         "wasDerivedFrom": {
-          "$ref": "https://ogcincubator.github.io/bblock-prov-schema/build/annotated/ogc-utils/prov/schema.json#oneOrMoreEntitiesOrRefIds"
+          "$ref": "https://ogcincubator.github.io/bblock-prov-schema-x/build/annotated/ogc-utils/prov/schema.json#oneOrMoreEntitiesOrRefIds"
         },
         "alternateOf": {
-          "$ref": "https://ogcincubator.github.io/bblock-prov-schema/build/annotated/ogc-utils/prov/schema.json#oneOrMoreEntitiesOrRefIds"
+          "$ref": "https://ogcincubator.github.io/bblock-prov-schema-x/build/annotated/ogc-utils/prov/schema.json#oneOrMoreEntitiesOrRefIds"
         },
         "hadPrimarySource": {
-          "$ref": "https://ogcincubator.github.io/bblock-prov-schema/build/annotated/ogc-utils/prov/schema.json#oneOrMoreEntitiesOrRefIds"
+          "$ref": "https://ogcincubator.github.io/bblock-prov-schema-x/build/annotated/ogc-utils/prov/schema.json#oneOrMoreEntitiesOrRefIds"
         },
         "specializationOf": {
-          "$ref": "https://ogcincubator.github.io/bblock-prov-schema/build/annotated/ogc-utils/prov/schema.json#oneOrMoreEntitiesOrRefIds"
+          "$ref": "https://ogcincubator.github.io/bblock-prov-schema-x/build/annotated/ogc-utils/prov/schema.json#oneOrMoreEntitiesOrRefIds"
         },
         "wasInvalidatedBy": {
-          "$ref": "https://ogcincubator.github.io/bblock-prov-schema/build/annotated/ogc-utils/prov/schema.json#oneOrMoreActivitiesOrRefIds"
+          "$ref": "https://ogcincubator.github.io/bblock-prov-schema-x/build/annotated/ogc-utils/prov/schema.json#oneOrMoreActivitiesOrRefIds"
         },
         "wasQuotedFrom": {
-          "$ref": "https://ogcincubator.github.io/bblock-prov-schema/build/annotated/ogc-utils/prov/schema.json#oneOrMoreEntitiesOrRefIds"
+          "$ref": "https://ogcincubator.github.io/bblock-prov-schema-x/build/annotated/ogc-utils/prov/schema.json#oneOrMoreEntitiesOrRefIds"
         },
         "wasRevisionOf": {
-          "$ref": "https://ogcincubator.github.io/bblock-prov-schema/build/annotated/ogc-utils/prov/schema.json#oneOrMoreEntitiesOrRefIds"
+          "$ref": "https://ogcincubator.github.io/bblock-prov-schema-x/build/annotated/ogc-utils/prov/schema.json#oneOrMoreEntitiesOrRefIds"
         },
         "atLocation": {
-          "$ref": "https://ogcincubator.github.io/bblock-prov-schema/build/annotated/ogc-utils/prov/schema.json#objectref"
+          "$ref": "https://ogcincubator.github.io/bblock-prov-schema-x/build/annotated/ogc-utils/prov/schema.json#objectref"
         },
         "links": {
           "type": "array",
           "items": {
-            "$ref": "https://ogcincubator.github.io/bblock-prov-schema/build/annotated/ogc-utils/prov/schema.json#externalLink"
+            "$ref": "https://ogcincubator.github.io/bblock-prov-schema-x/build/annotated/ogc-utils/prov/schema.json#externalLink"
           }
         },
         "qualifiedGeneration": {
           "oneOf": [
             {
-              "$ref": "https://ogcincubator.github.io/bblock-prov-schema/build/annotated/ogc-utils/prov/schema.json#objectref"
+              "$ref": "https://ogcincubator.github.io/bblock-prov-schema-x/build/annotated/ogc-utils/prov/schema.json#objectref"
             },
             {
-              "$ref": "https://ogcincubator.github.io/bblock-prov-schema/build/annotated/ogc-utils/prov-activity/schema.json#Generation"
+              "$ref": "https://ogcincubator.github.io/bblock-prov-schema-x/build/annotated/ogc-utils/prov-activity/schema.json#Generation"
             },
             {
               "type": "array",
               "items": {
                 "oneOf": [
                   {
-                    "$ref": "https://ogcincubator.github.io/bblock-prov-schema/build/annotated/ogc-utils/prov/schema.json#objectref"
+                    "$ref": "https://ogcincubator.github.io/bblock-prov-schema-x/build/annotated/ogc-utils/prov/schema.json#objectref"
                   },
                   {
-                    "$ref": "https://ogcincubator.github.io/bblock-prov-schema/build/annotated/ogc-utils/prov-activity/schema.json#Generation"
+                    "$ref": "https://ogcincubator.github.io/bblock-prov-schema-x/build/annotated/ogc-utils/prov-activity/schema.json#Generation"
                   }
                 ]
               }
@@ -103,20 +103,20 @@
         "qualifiedInvalidation": {
           "oneOf": [
             {
-              "$ref": "https://ogcincubator.github.io/bblock-prov-schema/build/annotated/ogc-utils/prov/schema.json#objectref"
+              "$ref": "https://ogcincubator.github.io/bblock-prov-schema-x/build/annotated/ogc-utils/prov/schema.json#objectref"
             },
             {
-              "$ref": "https://ogcincubator.github.io/bblock-prov-schema/build/annotated/ogc-utils/prov-activity/schema.json#Invalidation"
+              "$ref": "https://ogcincubator.github.io/bblock-prov-schema-x/build/annotated/ogc-utils/prov-activity/schema.json#Invalidation"
             },
             {
               "type": "array",
               "items": {
                 "oneOf": [
                   {
-                    "$ref": "https://ogcincubator.github.io/bblock-prov-schema/build/annotated/ogc-utils/prov/schema.json#objectref"
+                    "$ref": "https://ogcincubator.github.io/bblock-prov-schema-x/build/annotated/ogc-utils/prov/schema.json#objectref"
                   },
                   {
-                    "$ref": "https://ogcincubator.github.io/bblock-prov-schema/build/annotated/ogc-utils/prov-activity/schema.json#Invalidation"
+                    "$ref": "https://ogcincubator.github.io/bblock-prov-schema-x/build/annotated/ogc-utils/prov-activity/schema.json#Invalidation"
                   }
                 ]
               }
@@ -126,20 +126,20 @@
         "qualifiedDerivation": {
           "oneOf": [
             {
-              "$ref": "https://ogcincubator.github.io/bblock-prov-schema/build/annotated/ogc-utils/prov/schema.json#objectref"
+              "$ref": "https://ogcincubator.github.io/bblock-prov-schema-x/build/annotated/ogc-utils/prov/schema.json#objectref"
             },
             {
-              "$ref": "https://ogcincubator.github.io/bblock-prov-schema/build/annotated/ogc-utils/prov-activity/schema.json#Derivation"
+              "$ref": "https://ogcincubator.github.io/bblock-prov-schema-x/build/annotated/ogc-utils/prov-activity/schema.json#Derivation"
             },
             {
               "type": "array",
               "items": {
                 "oneOf": [
                   {
-                    "$ref": "https://ogcincubator.github.io/bblock-prov-schema/build/annotated/ogc-utils/prov/schema.json#objectref"
+                    "$ref": "https://ogcincubator.github.io/bblock-prov-schema-x/build/annotated/ogc-utils/prov/schema.json#objectref"
                   },
                   {
-                    "$ref": "https://ogcincubator.github.io/bblock-prov-schema/build/annotated/ogc-utils/prov-activity/schema.json#Derivation"
+                    "$ref": "https://ogcincubator.github.io/bblock-prov-schema-x/build/annotated/ogc-utils/prov-activity/schema.json#Derivation"
                   }
                 ]
               }
@@ -149,20 +149,20 @@
         "qualifiedAttribution": {
           "oneOf": [
             {
-              "$ref": "https://ogcincubator.github.io/bblock-prov-schema/build/annotated/ogc-utils/prov/schema.json#objectref"
+              "$ref": "https://ogcincubator.github.io/bblock-prov-schema-x/build/annotated/ogc-utils/prov/schema.json#objectref"
             },
             {
-              "$ref": "https://ogcincubator.github.io/bblock-prov-schema/build/annotated/ogc-utils/prov-activity/schema.json#Attribution"
+              "$ref": "https://ogcincubator.github.io/bblock-prov-schema-x/build/annotated/ogc-utils/prov-activity/schema.json#Attribution"
             },
             {
               "type": "array",
               "items": {
                 "oneOf": [
                   {
-                    "$ref": "https://ogcincubator.github.io/bblock-prov-schema/build/annotated/ogc-utils/prov/schema.json#objectref"
+                    "$ref": "https://ogcincubator.github.io/bblock-prov-schema-x/build/annotated/ogc-utils/prov/schema.json#objectref"
                   },
                   {
-                    "$ref": "https://ogcincubator.github.io/bblock-prov-schema/build/annotated/ogc-utils/prov-activity/schema.json#Attribution"
+                    "$ref": "https://ogcincubator.github.io/bblock-prov-schema-x/build/annotated/ogc-utils/prov-activity/schema.json#Attribution"
                   }
                 ]
               }
@@ -271,7 +271,7 @@
       ],
       "allOf": [
         {
-          "$ref": "https://ogcincubator.github.io/bblock-prov-schema/build/annotated/ogc-utils/prov/schema.json#influenced"
+          "$ref": "https://ogcincubator.github.io/bblock-prov-schema-x/build/annotated/ogc-utils/prov/schema.json#influenced"
         }
       ]
     }

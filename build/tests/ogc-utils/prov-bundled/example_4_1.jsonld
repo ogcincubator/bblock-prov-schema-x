@@ -1,6 +1,6 @@
 {
   "@context": [
-    "https://ogcincubator.github.io/bblock-prov-schema/build/annotated/ogc-utils/prov-bundled/context.jsonld",
+    "https://ogcincubator.github.io/bblock-prov-schema-x/build/annotated/ogc-utils/prov-bundled/context.jsonld",
     {
       "@base": "https://example.org/aThing/",
       "agents": "https://someagentregister.eg/",

@@ -1,5 +1,5 @@
 {
-  "@context": "https://ogcincubator.github.io/bblock-prov-schema/build/annotated/ogc-utils/prov-activity/context.jsonld",
+  "@context": "https://ogcincubator.github.io/bblock-prov-schema-x/build/annotated/ogc-utils/prov-activity/context.jsonld",
   "id": "DP-2223",
   "provType": "Entity",
   "featureType": "Survey",

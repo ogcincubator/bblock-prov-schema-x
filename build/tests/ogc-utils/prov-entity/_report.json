@@ -2,7 +2,7 @@
   "title": "Validation report for ogc.ogc-utils.prov-entity - Prov Entity",
   "bblockName": "Prov Entity",
   "bblockId": "ogc.ogc-utils.prov-entity",
-  "generated": "2025-10-16T07:55:14.707050+00:00",
+  "generated": "2025-11-02T06:26:11.735704+00:00",
   "result": true,
   "items": [
     {
@@ -10,7 +10,7 @@
         "type": "EXAMPLE",
         "requireFail": false,
         "filename": "build/tests/ogc-utils/prov-entity/example_1_1.json",
-        "url": "https://ogcincubator.github.io/bblock-prov-schema/build/tests/ogc-utils/prov-entity/example_1_1.json",
+        "url": "https://ogcincubator.github.io/bblock-prov-schema-x/build/tests/ogc-utils/prov-entity/example_1_1.json",
         "exampleIndex": 1,
         "snippetIndex": 1,
         "language": "application/json"
@@ -65,7 +65,7 @@
         "type": "EXAMPLE",
         "requireFail": false,
         "filename": "build/tests/ogc-utils/prov-entity/example_2_1.json",
-        "url": "https://ogcincubator.github.io/bblock-prov-schema/build/tests/ogc-utils/prov-entity/example_2_1.json",
+        "url": "https://ogcincubator.github.io/bblock-prov-schema-x/build/tests/ogc-utils/prov-entity/example_2_1.json",
         "exampleIndex": 2,
         "snippetIndex": 1,
         "language": "application/json"
@@ -120,7 +120,7 @@
         "type": "EXAMPLE",
         "requireFail": false,
         "filename": "build/tests/ogc-utils/prov-entity/example_3_1.json",
-        "url": "https://ogcincubator.github.io/bblock-prov-schema/build/tests/ogc-utils/prov-entity/example_3_1.json",
+        "url": "https://ogcincubator.github.io/bblock-prov-schema-x/build/tests/ogc-utils/prov-entity/example_3_1.json",
         "exampleIndex": 3,
         "snippetIndex": 1,
         "language": "application/json"
