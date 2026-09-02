@@ -9,222 +9,62 @@ A BBlock to cross check examples across the University of The PROV-JSONLD Serial
 
 ## Description
 
-## Provenance chain
-
-A JSON schema defining objects that may be referenced or nested as a chain of Activities, Entities or Agents (or subclasses thereof)
-
-This schema implements the PROV vocabulary semantics (through JSON-LD mapping directly to the PROV-O RDF model.)
-
-## Object typing
-
-Object typing needs to be explicit to support effective semantic mapping to the PROV vocabulary, and to support schema validation scope clarity (using the right sub-schema for objects in a collection representing the directed graph model of PROV).
-
-`provType` may be used to map to the subClasses of the Provenance vocabulary.
-
-Custom application object types are explicit (`activityType`, `agentType`, `entityType` to support schema validation clarity).
-
-
-
-Note that entityType is optional and may be replaced by `featureType` for compatibility with the OGC Feature implementation (implicitly always an Entity)
-
-likewise the use of the property `type` is not specified to allow compatibility with GeoJSON features that must have this property with a constant value ("Feature" or "FeatureCollection").
-
+## TBD
 
 ## Examples
 
-### Simple relationships
+### Example 43
 #### json
 ```json
 {
-  "id": "Object2",
-  "wasDerivedFrom": "Object1"
+  "@context" : [ {
+    "xsd" : "http://www.w3.org/2001/XMLSchema#",
+    "dcterms" : "http://purl.org/dc/terms/",
+    "ex" : "http://example/",
+    "prov" : "http://www.w3.org/ns/prov#",
+    "foaf" : "http://xmlns.com/foaf/0.1/"
+  }, "https://openprovenance.org/prov-jsonld/context.jsonld" ],
+  "@graph" : [ {
+    "@type" : "Entity",
+    "@id" : "ex:dataSet1"
+  }, {
+    "@type" : "Entity",
+    "@id" : "ex:article1",
+    "dcterms:title" : [ {
+	"@value" : "Crime rises in cities",
+	"@language" : "EN"
+    } ]
+  }, {
+    "@type" : "Derivation",
+    "generatedEntity" : "ex:article1",
+    "usedEntity" : "ex:dataSet1"
+  }, {
+    "@type" : "Agent",
+    "@id" : "ex:derek",
+    "type" : [ "prov:Person" ],
+    "foaf:givenName" : [ {
+      "@value" : "Derek"
+    } ],
+    "foaf:mbox" : [ {
+      "@value" : "<mailto:derek@example.org>"
+    } ]
+  }, {
+    "@type" : "Association",
+    "activity" : "ex:compose",
+    "agent" : "ex:derek"
+  }, {
+    "@type" : "Activity",
+    "@id" : "ex:compose"
+  }, {
+    "@type" : "Usage",
+    "activity" : "ex:compose",
+    "entity" : "ex:dataSet1"
+  }, {
+    "@type" : "Generation",
+    "entity" : "ex:article1",
+    "activity" : "ex:compose"
+  } ]
 }
-
-
-
-
-
-```
-
-#### jsonld
-```jsonld
-{
-  "@context": [
-    {
-      "iana": "http://www.iana.org/assignments/"
-    },
-    "https://ogcincubator.github.io/bblock-prov-schema-x/build/annotated/ogc-utils/prov-soton/context.jsonld"
-  ],
-  "id": "Object2",
-  "wasDerivedFrom": "Object1"
-}
-```
-
-#### ttl
-```ttl
-@prefix prov: <http://www.w3.org/ns/prov#> .
-
-<http://www.example.com/exampleEntities/Object2> prov:wasDerivedFrom <http://www.example.com/exampleEntities/Object1> .
-
-
-```
-
-
-### Activity
-this is a simple activity referencing some relevant document
-#### json
-```json
-{
-  "provType": "Activity",
-  "id": "someActivity_1",
-  "endedAtTime": "2029-01-01T22:05:19+02:00",
-  "wasAssociatedWith": "eg_agents:bc-3",
-  "used": {
-    "provType": "Entity",
-    "id": "Act3",
-    "wasAttributedTo": "eg_agents:Gov1",
-    "links": [
-      {
-        "href": "https://some.gov/linktoact/",
-        "rel": "related"
-      }
-    ]
-  }
-}
-
-
-
-
-
-```
-
-#### jsonld
-```jsonld
-{
-  "@context": [
-    {
-      "iana": "http://www.iana.org/assignments/"
-    },
-    "https://ogcincubator.github.io/bblock-prov-schema-x/build/annotated/ogc-utils/prov-soton/context.jsonld"
-  ],
-  "provType": "Activity",
-  "id": "someActivity_1",
-  "endedAtTime": "2029-01-01T22:05:19+02:00",
-  "wasAssociatedWith": "eg_agents:bc-3",
-  "used": {
-    "provType": "Entity",
-    "id": "Act3",
-    "wasAttributedTo": "eg_agents:Gov1",
-    "links": [
-      {
-        "href": "https://some.gov/linktoact/",
-        "rel": "related"
-      }
-    ]
-  }
-}
-```
-
-#### ttl
-```ttl
-@prefix iana: <http://www.iana.org/assignments/> .
-@prefix oa: <http://www.w3.org/ns/oa#> .
-@prefix prov: <http://www.w3.org/ns/prov#> .
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-
-<http://www.example.com/exampleActivity/someActivity_1> a prov:Activity ;
-    prov:endedAtTime "2029-01-01T22:05:19+02:00"^^xsd:dateTime ;
-    prov:used <http://www.example.com/exampleActivity/Act3> ;
-    prov:wasAssociatedWith <http://www.example.com/exampleActivity/eg_agents:bc-3> .
-
-<http://www.example.com/exampleActivity/Act3> a prov:Entity ;
-    rdfs:seeAlso [ iana:relation <http://www.iana.org/assignments/relation/related> ;
-            oa:hasTarget <https://some.gov/linktoact/> ] ;
-    prov:wasAttributedTo <http://www.example.com/exampleActivity/eg_agents:Gov1> .
-
-
-```
-
-
-### Provenance Chain
-DAG defined by an object list.
-#### json
-```json
-{
-  "@context": {
-    "@base": "https://example.org/aThing/",
-    "agents": "https://someagentregister.eg/",
-    "thing": "https://example.org/entities/",
-    "foaf": "http://xmlns.com/foaf/0.1/",
-    "survtypes": "https://example.org/surveytypes/",
-    "surveyreg": "https://example.org/surveys/",
-    "featureType": {
-      "@id": "@type",
-      "@context": {
-        "@base": "http://example.org/myEntities/"
-      }
-    },
-    "activityType": {
-      "@id": "@type",
-      "@context": {
-        "@base": "http://example.org/myActivityTypes/"
-      }
-    }
-  },
-  "id": "DP-1",
-  "type": "Feature",
-  "featureType": "Survey",
-  "wasGeneratedBy": [
-    "surveyreg:DP-1-S1",
-    {
-      "activityType": "Registration",
-      "id": "surveyreg:DP-1-S2",
-      "endedAtTime": "2019-01-01T19:03:15+01:00",
-      "wasAssociatedWith": "agents:bc-3",
-      "used": {
-        "id": "Example-Act",
-        "wasAttributedTo": "agents:nz",
-        "links": [
-          {
-            "href": "https://nze.gov/linktoact/Example1",
-            "rel": "related"
-          }
-        ]
-      }
-    }
-  ],
-  "has_provenance": [
-    {
-      "id": "DP-2223",
-      "provType": "Entity",
-      "featureType": "Survey",
-      "wasGeneratedBy": "DP-1-S1"
-    },
-    {
-      "provType": "Activity",
-      "id": "surveyreg:DP-1-S1",
-      "activityType": "InitialSurvey",
-      "endedAtTime": "2023-10-05T05:03:15+01:00",
-      "wasAssociatedWith": "agents:ah-2344503",
-      "used": {
-        "id": "thing:Act3",
-        "entityType": "Legislation",
-        "wasAttributedTo": "agents:nz",
-        "links": [
-          {
-            "href": "https://some.gov/linktoact/",
-            "rel": "related"
-          }
-        ]
-      }
-    }
-  ]
-}
-
-
-
-
 ```
 
 #### jsonld
@@ -236,353 +76,69 @@ DAG defined by an object list.
     },
     "https://ogcincubator.github.io/bblock-prov-schema-x/build/annotated/ogc-utils/prov-soton/context.jsonld",
     {
-      "@base": "https://example.org/aThing/",
-      "agents": "https://someagentregister.eg/",
-      "thing": "https://example.org/entities/",
-      "foaf": "http://xmlns.com/foaf/0.1/",
-      "survtypes": "https://example.org/surveytypes/",
-      "surveyreg": "https://example.org/surveys/",
-      "featureType": {
-        "@id": "@type",
-        "@context": {
-          "@base": "http://example.org/myEntities/"
-        }
-      },
-      "activityType": {
-        "@id": "@type",
-        "@context": {
-          "@base": "http://example.org/myActivityTypes/"
-        }
-      }
-    }
+      "xsd": "http://www.w3.org/2001/XMLSchema#",
+      "dcterms": "http://purl.org/dc/terms/",
+      "ex": "http://example/",
+      "prov": "http://www.w3.org/ns/prov#",
+      "foaf": "http://xmlns.com/foaf/0.1/"
+    },
+    "https://openprovenance.org/prov-jsonld/context.jsonld"
   ],
-  "id": "DP-1",
-  "type": "Feature",
-  "featureType": "Survey",
-  "wasGeneratedBy": [
-    "surveyreg:DP-1-S1",
+  "@graph": [
     {
-      "activityType": "Registration",
-      "id": "surveyreg:DP-1-S2",
-      "endedAtTime": "2019-01-01T19:03:15+01:00",
-      "wasAssociatedWith": "agents:bc-3",
-      "used": {
-        "id": "Example-Act",
-        "wasAttributedTo": "agents:nz",
-        "links": [
-          {
-            "href": "https://nze.gov/linktoact/Example1",
-            "rel": "related"
-          }
-        ]
-      }
-    }
-  ],
-  "has_provenance": [
-    {
-      "id": "DP-2223",
-      "provType": "Entity",
-      "featureType": "Survey",
-      "wasGeneratedBy": "DP-1-S1"
+      "@type": "Entity",
+      "@id": "ex:dataSet1"
     },
     {
-      "provType": "Activity",
-      "id": "surveyreg:DP-1-S1",
-      "activityType": "InitialSurvey",
-      "endedAtTime": "2023-10-05T05:03:15+01:00",
-      "wasAssociatedWith": "agents:ah-2344503",
-      "used": {
-        "id": "thing:Act3",
-        "entityType": "Legislation",
-        "wasAttributedTo": "agents:nz",
-        "links": [
-          {
-            "href": "https://some.gov/linktoact/",
-            "rel": "related"
-          }
-        ]
-      }
-    }
-  ]
-}
-```
-
-#### ttl
-```ttl
-@prefix agents: <https://someagentregister.eg/> .
-@prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix iana: <http://www.iana.org/assignments/> .
-@prefix oa: <http://www.w3.org/ns/oa#> .
-@prefix prov: <http://www.w3.org/ns/prov#> .
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix surveyreg: <https://example.org/surveys/> .
-@prefix thing: <https://example.org/entities/> .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-
-<https://example.org/aThing/DP-1> a <http://example.org/myEntities/Survey> ;
-    dcterms:provenance <https://example.org/aThing/DP-2223>,
-        surveyreg:DP-1-S1 ;
-    dcterms:type "Feature" ;
-    prov:wasGeneratedBy surveyreg:DP-1-S1,
-        surveyreg:DP-1-S2 .
-
-<https://example.org/aThing/DP-2223> a <http://example.org/myEntities/Survey>,
-        prov:Entity ;
-    prov:wasGeneratedBy <https://example.org/aThing/DP-1-S1> .
-
-<https://example.org/aThing/Example-Act> rdfs:seeAlso [ iana:relation <http://www.iana.org/assignments/relation/related> ;
-            oa:hasTarget <https://nze.gov/linktoact/Example1> ] ;
-    prov:wasAttributedTo agents:nz .
-
-thing:Act3 a <https://example.org/aThing/Legislation> ;
-    rdfs:seeAlso [ iana:relation <http://www.iana.org/assignments/relation/related> ;
-            oa:hasTarget <https://some.gov/linktoact/> ] ;
-    prov:wasAttributedTo agents:nz .
-
-surveyreg:DP-1-S2 a <http://example.org/myActivityTypes/Registration> ;
-    prov:endedAtTime "2019-01-01T19:03:15+01:00"^^xsd:dateTime ;
-    prov:used <https://example.org/aThing/Example-Act> ;
-    prov:wasAssociatedWith agents:bc-3 .
-
-surveyreg:DP-1-S1 a <http://example.org/myActivityTypes/InitialSurvey>,
-        prov:Activity ;
-    prov:endedAtTime "2023-10-05T05:03:15+01:00"^^xsd:dateTime ;
-    prov:used thing:Act3 ;
-    prov:wasAssociatedWith agents:ah-2344503 .
-
-
-```
-
-
-### Qualified Generation
-A [qualified generation](https://www.w3.org/TR/prov-o/#qualifiedGeneration) example.
-#### json
-```json
-{
-  "@context": {
-    "@base": "https://example.org/aThing/",
-    "agents": "https://someagentregister.eg/",
-    "thing": "https://example.org/entities/",
-    "foaf": "http://xmlns.com/foaf/0.1/",
-    "survtypes": "https://example.org/surveytypes/",
-    "surveyreg": "https://example.org/surveys/",
-    "featureType": {
-      "@id": "@type",
-      "@context": {
-        "@base": "http://example.org/myEntities/"
-      }
-    },
-    "activityType": {
-      "@id": "@type",
-      "@context": {
-        "@base": "http://example.org/myActivityTypes/"
-      }
-    }
-  },
-  "id": "DP-1",
-  "type": "Feature",
-  "featureType": "Survey",
-  "qualifiedGeneration": [
-    {
-      "type": "Generation",
-      "activity": {
-        "id": "uuid:d7e8b17e-2d80-4c42-a797-bc3628f52c44",
-        "type": [
-          "wfprov:ProcessRun",
-          "Activity"
-        ],
-        "name": "Run of workflow/packed.cwl#main/sorted"
-      },
-      "atTime": "2018-10-25T15:46:38.058365",
-      "hadRole": "wf:main/sorted/output"
-    }
-  ]
-}
-
-
-
-
-```
-
-#### jsonld
-```jsonld
-{
-  "@context": [
-    {
-      "iana": "http://www.iana.org/assignments/"
-    },
-    "https://ogcincubator.github.io/bblock-prov-schema-x/build/annotated/ogc-utils/prov-soton/context.jsonld",
-    {
-      "@base": "https://example.org/aThing/",
-      "agents": "https://someagentregister.eg/",
-      "thing": "https://example.org/entities/",
-      "foaf": "http://xmlns.com/foaf/0.1/",
-      "survtypes": "https://example.org/surveytypes/",
-      "surveyreg": "https://example.org/surveys/",
-      "featureType": {
-        "@id": "@type",
-        "@context": {
-          "@base": "http://example.org/myEntities/"
-        }
-      },
-      "activityType": {
-        "@id": "@type",
-        "@context": {
-          "@base": "http://example.org/myActivityTypes/"
-        }
-      }
-    }
-  ],
-  "id": "DP-1",
-  "type": "Feature",
-  "featureType": "Survey",
-  "qualifiedGeneration": [
-    {
-      "type": "Generation",
-      "activity": {
-        "id": "uuid:d7e8b17e-2d80-4c42-a797-bc3628f52c44",
-        "type": [
-          "wfprov:ProcessRun",
-          "Activity"
-        ],
-        "name": "Run of workflow/packed.cwl#main/sorted"
-      },
-      "atTime": "2018-10-25T15:46:38.058365",
-      "hadRole": "wf:main/sorted/output"
-    }
-  ]
-}
-```
-
-#### ttl
-```ttl
-@prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix prov: <http://www.w3.org/ns/prov#> .
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-
-<https://example.org/aThing/DP-1> a <http://example.org/myEntities/Survey> ;
-    dcterms:type "Feature" ;
-    prov:qualifiedGeneration [ dcterms:type "Generation" ;
-            prov:activity <uuid:d7e8b17e-2d80-4c42-a797-bc3628f52c44> ;
-            prov:atTime "2018-10-25T15:46:38.058365"^^xsd:dateTime ;
-            prov:hadRole <wf:main/sorted/output> ] .
-
-<uuid:d7e8b17e-2d80-4c42-a797-bc3628f52c44> rdfs:label "Run of workflow/packed.cwl#main/sorted" ;
-    dcterms:type "Activity",
-        "wfprov:ProcessRun" .
-
-
-```
-
-
-### Workflow (using LLM) Example
-A provenance chain for a workflow using a Large Language Model to interpret a query and and a geospatial data source.
-
-This is a fairly trivial example not attempting to standardise descriptions of such workflows, which would be an obvious profile for this model.
-#### json
-```json
-{
-    "prov:type": "prov:Activity",
-    "generated": {
-        "id": "output",
-        "type": "Entity",
-        "AgentType": "SoftwareAgent",
-        "response": [
-            {
-                "id": "LLM Generated Code",
-                "type": "Entity",
-                "wasGeneratedBy": "gemini-1.5-pro-001",
-                "data": "gdf.to_crs(epsg=7856).set_index('name').loc['UNSW Village'].geometry.distance(gdf.to_crs(epsg=7856)[gdf.amenity == 'hospital'].geometry).min()"
-            },
-            {
-                "id": "Code Output",
-                "type": "Entity",
-                "data": "511.8048618048641"
-            },
-            {
-                "id": "Final Output",
-                "type": "Entity",
-                "wasGeneratedBy": "gemini-1.5-flash-001",
-                "data": "The closest hospital to UNSW Village is approximately 512 meters away."
-            }
-        ]
-    },
-    "startedAtTime": "2024-11-19T05:07:22.927913Z",
-    "endedAtTime": "2024-11-19T05:07:34.304708Z",
-    "used": [
+      "@type": "Entity",
+      "@id": "ex:article1",
+      "dcterms:title": [
         {
-            "id": "file",
-            "type": "Entity",
-            "data": [
-                {
-                    "id": "osmdata.shp",
-                    "type": "Entity",
-                    "records": 3544
-                }
-            ]
-        },
-        {
-            "id": "user_input",
-            "prov:type": "Entity",
-            "input": "How far away is the closest hospital from UNSW village"
-        }
-    ]
-}
-```
-
-#### jsonld
-```jsonld
-{
-  "@context": [
-    {
-      "iana": "http://www.iana.org/assignments/"
-    },
-    "https://ogcincubator.github.io/bblock-prov-schema-x/build/annotated/ogc-utils/prov-soton/context.jsonld"
-  ],
-  "prov:type": "prov:Activity",
-  "generated": {
-    "id": "output",
-    "type": "Entity",
-    "AgentType": "SoftwareAgent",
-    "response": [
-      {
-        "id": "LLM Generated Code",
-        "type": "Entity",
-        "wasGeneratedBy": "gemini-1.5-pro-001",
-        "data": "gdf.to_crs(epsg=7856).set_index('name').loc['UNSW Village'].geometry.distance(gdf.to_crs(epsg=7856)[gdf.amenity == 'hospital'].geometry).min()"
-      },
-      {
-        "id": "Code Output",
-        "type": "Entity",
-        "data": "511.8048618048641"
-      },
-      {
-        "id": "Final Output",
-        "type": "Entity",
-        "wasGeneratedBy": "gemini-1.5-flash-001",
-        "data": "The closest hospital to UNSW Village is approximately 512 meters away."
-      }
-    ]
-  },
-  "startedAtTime": "2024-11-19T05:07:22.927913Z",
-  "endedAtTime": "2024-11-19T05:07:34.304708Z",
-  "used": [
-    {
-      "id": "file",
-      "type": "Entity",
-      "data": [
-        {
-          "id": "osmdata.shp",
-          "type": "Entity",
-          "records": 3544
+          "@value": "Crime rises in cities",
+          "@language": "EN"
         }
       ]
     },
     {
-      "id": "user_input",
-      "prov:type": "Entity",
-      "input": "How far away is the closest hospital from UNSW village"
+      "@type": "Derivation",
+      "generatedEntity": "ex:article1",
+      "usedEntity": "ex:dataSet1"
+    },
+    {
+      "@type": "Agent",
+      "@id": "ex:derek",
+      "type": [
+        "prov:Person"
+      ],
+      "foaf:givenName": [
+        {
+          "@value": "Derek"
+        }
+      ],
+      "foaf:mbox": [
+        {
+          "@value": "<mailto:derek@example.org>"
+        }
+      ]
+    },
+    {
+      "@type": "Association",
+      "activity": "ex:compose",
+      "agent": "ex:derek"
+    },
+    {
+      "@type": "Activity",
+      "@id": "ex:compose"
+    },
+    {
+      "@type": "Usage",
+      "activity": "ex:compose",
+      "entity": "ex:dataSet1"
+    },
+    {
+      "@type": "Generation",
+      "entity": "ex:article1",
+      "activity": "ex:compose"
     }
   ]
 }
@@ -591,21 +147,29 @@ This is a fairly trivial example not attempting to standardise descriptions of s
 #### ttl
 ```ttl
 @prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix ex: <http://example/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix prov: <http://www.w3.org/ns/prov#> .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<http://www.example.com/exampleEntity/file> dcterms:type "Entity" .
+ex:article1 a prov:Entity ;
+    dcterms:title "Crime rises in cities"@EN ;
+    prov:qualifiedDerivation [ a prov:Derivation ;
+            prov:entity ex:dataSet1 ] ;
+    prov:qualifiedGeneration [ a prov:Generation ;
+            prov:activity ex:compose ] .
 
-<http://www.example.com/exampleEntity/output> dcterms:type "Entity" .
+ex:compose a prov:Activity ;
+    prov:qualifiedAssociation [ a prov:Association ;
+            prov:agent ex:derek ] ;
+    prov:qualifiedUsage [ a prov:Usage ;
+            prov:entity ex:dataSet1 ] .
 
-<http://www.example.com/exampleEntity/user_input> prov:type "Entity" .
+ex:derek a prov:Agent,
+        prov:Person ;
+    foaf:givenName "Derek" ;
+    foaf:mbox "<mailto:derek@example.org>" .
 
-[] prov:endedAtTime "2024-11-19T05:07:34.304708+00:00"^^xsd:dateTime ;
-    prov:generated <http://www.example.com/exampleEntity/output> ;
-    prov:startedAtTime "2024-11-19T05:07:22.927913+00:00"^^xsd:dateTime ;
-    prov:type "prov:Activity" ;
-    prov:used <http://www.example.com/exampleEntity/file>,
-        <http://www.example.com/exampleEntity/user_input> .
+ex:dataSet1 a prov:Entity .
 
 
 ```
@@ -617,7 +181,6 @@ $schema: https://json-schema.org/draft/2020-12/schema
 description: Provenance Chain using PROV-O core model supporting both an ID based
   object graph and nesting
 allOf:
-- $ref: https://ogcincubator.github.io/bblock-prov-schema-x/build/annotated/ogc-utils/prov/schema.yaml
 - $ref: https://www.w3.org/submissions/2024/SUBM-prov-jsonld-20240825/schema.json
 x-jsonld-extra-terms:
   activityType: '@type'
@@ -898,29 +461,6 @@ Links to the schema:
 ```jsonld
 {
   "@context": {
-    "wasInfluencedBy": {
-      "@id": "prov:wasInfluencedBy",
-      "@type": "@id"
-    },
-    "qualifiedInfluence": {
-      "@id": "prov:qualifiedInfluence",
-      "@type": "@id"
-    },
-    "href": {
-      "@type": "@id",
-      "@id": "oa:hasTarget"
-    },
-    "rel": {
-      "@context": {
-        "@base": "http://www.iana.org/assignments/relation/"
-      },
-      "@id": "http://www.iana.org/assignments/relation",
-      "@type": "@id"
-    },
-    "type": "dct:type",
-    "hreflang": "dct:language",
-    "title": "rdfs:label",
-    "length": "dct:extent",
     "activityType": "@type",
     "agentType": "@type",
     "entityType": "@type",
@@ -1102,6 +642,10 @@ Links to the schema:
       "@id": "prov:qualifiedGeneration",
       "@type": "@id"
     },
+    "qualifiedInfluence": {
+      "@id": "prov:qualifiedInfluence",
+      "@type": "@id"
+    },
     "qualifiedInvalidation": {
       "@id": "prov:qualifiedInvalidation",
       "@type": "@id"
@@ -1152,6 +696,10 @@ Links to the schema:
     },
     "wasGeneratedBy": {
       "@id": "prov:wasGeneratedBy",
+      "@type": "@id"
+    },
+    "wasInfluencedBy": {
+      "@id": "prov:wasInfluencedBy",
       "@type": "@id"
     },
     "wasInformedBy": {
@@ -1242,7 +790,6 @@ Links to the schema:
     "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
     "dct": "http://purl.org/dc/terms/",
     "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
-    "oa": "http://www.w3.org/ns/oa#",
     "@version": 1.1
   }
 }

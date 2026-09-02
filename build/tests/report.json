@@ -1,0 +1,87 @@
+{
+  "summary": {
+    "total": 1,
+    "passed": 0,
+    "failed": 1,
+    "result": false
+  },
+  "bblocks": {
+    "ogc.ogc-utils.prov-soton": {
+      "title": "Validation report for ogc.ogc-utils.prov-soton - 2024 w3c",
+      "bblockName": "2024 w3c",
+      "bblockId": "ogc.ogc-utils.prov-soton",
+      "generated": "2026-09-02T05:49:36.889627+00:00",
+      "result": false,
+      "items": [
+        {
+          "source": {
+            "type": "EXAMPLE",
+            "requireFail": false,
+            "filename": "build/tests/ogc-utils/prov-soton/example_1_1.json",
+            "url": "https://ogcincubator.github.io/bblock-prov-schema-x/build/tests/ogc-utils/prov-soton/example_1_1.json",
+            "exampleIndex": 1,
+            "snippetIndex": 1,
+            "language": "application/json"
+          },
+          "result": false,
+          "sections": [
+            {
+              "name": "FILES",
+              "title": "Files",
+              "entries": [
+                {
+                  "isError": false,
+                  "message": "Using examples/soton-eg-43.json from examples"
+                },
+                {
+                  "op": "@graph-unwrap",
+                  "isError": false,
+                  "message": "\"@graph\" found, unwrapping"
+                },
+                {
+                  "op": "jsonld-uplift",
+                  "isError": false,
+                  "message": "JSON-LD context is present - uplifting"
+                },
+                {
+                  "op": "jsonld-create",
+                  "filename": "example_1_1.jsonld",
+                  "isError": false,
+                  "message": "Output JSON-LD example_1_1.jsonld created"
+                },
+                {
+                  "op": "ttl-create",
+                  "empty": false,
+                  "filename": "example_1_1.ttl",
+                  "size": 20,
+                  "isError": false,
+                  "message": "Output Turtle example_1_1.ttl created"
+                }
+              ]
+            },
+            {
+              "name": "JSON_SCHEMA",
+              "title": "JSON Schema",
+              "entries": [
+                {
+                  "op": "validation",
+                  "result": false,
+                  "exception": "ValidationError",
+                  "errorMessage": "[{'@type': 'Entity', '@id': 'ex:dataSet1'}, {'@type': 'Entity', '@id': 'ex:article1', 'dcterms:title': [{'@value': 'Crime rises in cities', '@language': 'EN'}]}, {'@type': 'Derivation', 'generatedEntity': 'ex:article1', 'usedEntity': 'ex:dataSet1'}, {'@type': 'Agent', '@id': 'ex:derek', 'type': ['prov:Person'], 'foaf:givenName': [{'@value': 'Derek'}], 'foaf:mbox': [{'@value': '<mailto:derek@example.org>'}]}, {'@type': 'Association', 'activity': 'ex:compose', 'agent': 'ex:derek'}, {'@type': 'Activity', '@id': 'ex:compose'}, {'@type': 'Usage', 'activity': 'ex:compose', 'entity': 'ex:dataSet1'}, {'@type': 'Generation', 'entity': 'ex:article1', 'activity': 'ex:compose'}] is not of type 'object'",
+                  "isError": true,
+                  "message": "ValidationError: [{'@type': 'Entity', '@id': 'ex:dataSet1'}, {'@type': 'Entity', '@id': 'ex:article1', 'dcterms:title': [{'@value': 'Crime rises in cities', '@language': 'EN'}]}, {'@type': 'Derivation', 'generatedEntity': 'ex:article1', 'usedEntity': 'ex:dataSet1'}, {'@type': 'Agent', '@id': 'ex:derek', 'type': ['prov:Person'], 'foaf:givenName': [{'@value': 'Derek'}], 'foaf:mbox': [{'@value': '<mailto:derek@example.org>'}]}, {'@type': 'Association', 'activity': 'ex:compose', 'agent': 'ex:derek'}, {'@type': 'Activity', '@id': 'ex:compose'}, {'@type': 'Usage', 'activity': 'ex:compose', 'entity': 'ex:dataSet1'}, {'@type': 'Generation', 'entity': 'ex:article1', 'activity': 'ex:compose'}] is not of type 'object'\n\nFailed validating 'type' in schema['allOf'][0]:\n    {'additionalProperties': False,\n     'properties': {'@context': {'$ref': '#/definitions/Context'},\n                    '@graph': {'items': {'$ref': '#/definitions/prov:StatementOrBundle'},\n                               'type': 'array'},\n                    '@type': {'pattern': 'Document'}},\n     'required': ['@context', '@graph'],\n     'type': 'object'}\n\nOn instance:\n    [{'@id': 'ex:dataSet1', '@type': 'Entity'},\n     {'@id': 'ex:article1',\n      '@type': 'Entity',\n      'dcterms:title': [{'@language': 'EN',\n                         '@value': 'Crime rises in cities'}]},\n     {'@type': 'Derivation',\n      'generatedEntity': 'ex:article1',\n      'usedEntity': 'ex:dataSet1'},\n     {'@id': 'ex:derek',\n      '@type': 'Agent',\n      'foaf:givenName': [{'@value': 'Derek'}],\n      'foaf:mbox': [{'@value': '<mailto:derek@example.org>'}],\n      'type': ['prov:Person']},\n     {'@type': 'Association',\n      'activity': 'ex:compose',\n      'agent': 'ex:derek'},\n     {'@id': 'ex:compose', '@type': 'Activity'},\n     {'@type': 'Usage', 'activity': 'ex:compose', 'entity': 'ex:dataSet1'},\n     {'@type': 'Generation',\n      'activity': 'ex:compose',\n      'entity': 'ex:article1'}]"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "globalErrors": {},
+      "counts": {
+        "total": 1,
+        "passed": 0,
+        "failed": 1
+      }
+    }
+  }
+}
