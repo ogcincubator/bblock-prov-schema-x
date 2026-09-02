@@ -64,9 +64,9 @@
     <body>
         <div class="container">
             <h1 class="title">Building blocks validation report</h1>
-            <small class="datetime">Generated at 2026-09-02T05:49:36.904677+00:00</small>
-                <p class="summary fw-semibold text-danger">
-                    Number of passing building blocks: 0 / 1 (0%)
+            <small class="datetime">Generated at 2026-09-02T07:22:40.840291+00:00</small>
+                <p class="summary fw-semibold text-success">
+                    Number of passing building blocks: 1 / 1 (100%)
                 </p>
             <div class="text-end small" id="expand-collapse">
                 <a href="#" class="expand-all">Expand all</a>
@@ -75,7 +75,7 @@
                 <div class="accordion mt-2" id="bblock-reports">
                         <div class="accordion-item bblock-report" data-bblock-id="ogc.ogc-utils.prov-soton" id="bblock-ogc.ogc-utils.prov-soton">
                             <h2 class="accordion-header bblock-title anchor-container">
-                                <button class="accordion-button " type="button"
+                                <button class="accordion-button collapsed" type="button"
                                     data-bs-toggle="collapse"
                                     data-bs-target="#bblock-collapse-ogc\.ogc-utils\.prov-soton">
                                     <div class="flex-fill">
@@ -84,16 +84,16 @@
                                         <a class="anchor" href="#bblock-ogc.ogc-utils.prov-soton">¶</a>
                                     </div>
 
-                                    <span class="badge text-bg-danger me-2">
-                                            Tests Failed
-                                            (0% passed)
+                                    <span class="badge text-bg-success me-2">
+                                            Passed
+                                            (100% passed)
                                     </span>
                                 </button>
                             </h2>
-                            <div class="accordion-collapse collapse show" id="bblock-collapse-ogc.ogc-utils.prov-soton">
+                            <div class="accordion-collapse collapse " id="bblock-collapse-ogc.ogc-utils.prov-soton">
                                 <div class="accordion-body">
-                                        <p class="summary fw-semibold text-danger">
-                                            Test passed: 0 / 1
+                                        <p class="summary fw-semibold text-success">
+                                            Test passed: 1 / 1
                                         </p>
                                         <div class="card mb-2 validation-item " id="item-ogc.ogc-utils.prov-soton-1">
                                             <div class="card-body">
@@ -109,7 +109,7 @@
                                                     <span class="badge bg-secondary example">Example</span>
                                                     <a class="anchor" href="#item-ogc.ogc-utils.prov-soton-1">¶</a>
                                                     <div class="float-end">
-                                                            <span class="badge text-bg-danger me-2">Failed</span>
+                                                            <span class="badge text-bg-success me-2">Passed</span>
                                                     </div>
                                                 </div>
                                                 <div class="card-text mt-2 validation-text collapse" id="uid-1">
@@ -119,7 +119,9 @@
                                                                     
                                                                     <div class="font-monospace entry-message section-files ">Using examples/soton-eg-43.json from examples</div>
                                                                     
-                                                                    <div class="font-monospace entry-message section-files ">&quot;@graph&quot; found, unwrapping</div>
+                                                                    <div class="font-monospace entry-message section-files ">&quot;@graph&quot; found, trying validation with contents unwrapped</div>
+                                                                    
+                                                                    <div class="font-monospace entry-message section-files ">Validation of unwrapped &quot;@graph&quot; contents failed; validated successfully as a full object instead</div>
                                                                     
                                                                     <div class="font-monospace entry-message section-files ">JSON-LD context is present - uplifting</div>
                                                                     
@@ -129,39 +131,7 @@
                                                                     <div class="font-monospace subsection-title mt-2">JSON Schema</div>
                                                                 
                                                                     
-                                                                    <div class="font-monospace entry-message section-json_schema text-danger">ValidationError: [{&#x27;@type&#x27;: &#x27;Entity&#x27;, &#x27;@id&#x27;: &#x27;ex:dataSet1&#x27;}, {&#x27;@type&#x27;: &#x27;Entity&#x27;, &#x27;@id&#x27;: &#x27;ex:article1&#x27;, &#x27;dcterms:title&#x27;: [{&#x27;@value&#x27;: &#x27;Crime rises in cities&#x27;, &#x27;@language&#x27;: &#x27;EN&#x27;}]}, {&#x27;@type&#x27;: &#x27;Derivation&#x27;, &#x27;generatedEntity&#x27;: &#x27;ex:article1&#x27;, &#x27;usedEntity&#x27;: &#x27;ex:dataSet1&#x27;}, {&#x27;@type&#x27;: &#x27;Agent&#x27;, &#x27;@id&#x27;: &#x27;ex:derek&#x27;, &#x27;type&#x27;: [&#x27;prov:Person&#x27;], &#x27;foaf:givenName&#x27;: [{&#x27;@value&#x27;: &#x27;Derek&#x27;}], &#x27;foaf:mbox&#x27;: [{&#x27;@value&#x27;: &#x27;&lt;mailto:derek@example.org&gt;&#x27;}]}, {&#x27;@type&#x27;: &#x27;Association&#x27;, &#x27;activity&#x27;: &#x27;ex:compose&#x27;, &#x27;agent&#x27;: &#x27;ex:derek&#x27;}, {&#x27;@type&#x27;: &#x27;Activity&#x27;, &#x27;@id&#x27;: &#x27;ex:compose&#x27;}, {&#x27;@type&#x27;: &#x27;Usage&#x27;, &#x27;activity&#x27;: &#x27;ex:compose&#x27;, &#x27;entity&#x27;: &#x27;ex:dataSet1&#x27;}, {&#x27;@type&#x27;: &#x27;Generation&#x27;, &#x27;entity&#x27;: &#x27;ex:article1&#x27;, &#x27;activity&#x27;: &#x27;ex:compose&#x27;}] is not of type &#x27;object&#x27;
-
-Failed validating &#x27;type&#x27; in schema[&#x27;allOf&#x27;][0]:
-    {&#x27;additionalProperties&#x27;: False,
-     &#x27;properties&#x27;: {&#x27;@context&#x27;: {&#x27;$ref&#x27;: &#x27;#/definitions/Context&#x27;},
-                    &#x27;@graph&#x27;: {&#x27;items&#x27;: {&#x27;$ref&#x27;: &#x27;#/definitions/prov:StatementOrBundle&#x27;},
-                               &#x27;type&#x27;: &#x27;array&#x27;},
-                    &#x27;@type&#x27;: {&#x27;pattern&#x27;: &#x27;Document&#x27;}},
-     &#x27;required&#x27;: [&#x27;@context&#x27;, &#x27;@graph&#x27;],
-     &#x27;type&#x27;: &#x27;object&#x27;}
-
-On instance:
-    [{&#x27;@id&#x27;: &#x27;ex:dataSet1&#x27;, &#x27;@type&#x27;: &#x27;Entity&#x27;},
-     {&#x27;@id&#x27;: &#x27;ex:article1&#x27;,
-      &#x27;@type&#x27;: &#x27;Entity&#x27;,
-      &#x27;dcterms:title&#x27;: [{&#x27;@language&#x27;: &#x27;EN&#x27;,
-                         &#x27;@value&#x27;: &#x27;Crime rises in cities&#x27;}]},
-     {&#x27;@type&#x27;: &#x27;Derivation&#x27;,
-      &#x27;generatedEntity&#x27;: &#x27;ex:article1&#x27;,
-      &#x27;usedEntity&#x27;: &#x27;ex:dataSet1&#x27;},
-     {&#x27;@id&#x27;: &#x27;ex:derek&#x27;,
-      &#x27;@type&#x27;: &#x27;Agent&#x27;,
-      &#x27;foaf:givenName&#x27;: [{&#x27;@value&#x27;: &#x27;Derek&#x27;}],
-      &#x27;foaf:mbox&#x27;: [{&#x27;@value&#x27;: &#x27;&lt;mailto:derek@example.org&gt;&#x27;}],
-      &#x27;type&#x27;: [&#x27;prov:Person&#x27;]},
-     {&#x27;@type&#x27;: &#x27;Association&#x27;,
-      &#x27;activity&#x27;: &#x27;ex:compose&#x27;,
-      &#x27;agent&#x27;: &#x27;ex:derek&#x27;},
-     {&#x27;@id&#x27;: &#x27;ex:compose&#x27;, &#x27;@type&#x27;: &#x27;Activity&#x27;},
-     {&#x27;@type&#x27;: &#x27;Usage&#x27;, &#x27;activity&#x27;: &#x27;ex:compose&#x27;, &#x27;entity&#x27;: &#x27;ex:dataSet1&#x27;},
-     {&#x27;@type&#x27;: &#x27;Generation&#x27;,
-      &#x27;activity&#x27;: &#x27;ex:compose&#x27;,
-      &#x27;entity&#x27;: &#x27;ex:article1&#x27;}]</div>
+                                                                    <div class="font-monospace entry-message section-json_schema ">Validation passed</div>
                                                     </div>
                                                 </div>
                                             </div>

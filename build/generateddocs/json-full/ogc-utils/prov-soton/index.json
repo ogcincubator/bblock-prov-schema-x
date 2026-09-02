@@ -10,7 +10,7 @@
   "itemClass": "schema",
   "register": "ogc-utils",
   "version": "0.1",
-  "dateOfLastChange": "2026-09-02",
+  "dateOfLastChange": "2023-07-10",
   "dependsOn": [],
   "sources": [
     {
@@ -33,7 +33,7 @@
   "sourceSchema": "https://ogcincubator.github.io/bblock-prov-schema-x/_sources/prov-soton/schema.json",
   "sourceLdContext": "https://ogcincubator.github.io/bblock-prov-schema-x/_sources/prov-soton/context.jsonld",
   "sourceFiles": "https://ogcincubator.github.io/bblock-prov-schema-x/_sources/prov-soton/",
-  "validationPassed": false,
+  "validationPassed": true,
   "testOutputs": "https://github.com/ogcincubator/bblock-prov-schema-x/blob/master/build/tests/ogc-utils/prov-soton/",
   "description": "## TBD\n",
   "examples": [
